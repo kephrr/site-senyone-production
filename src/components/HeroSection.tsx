@@ -6,14 +6,10 @@ import { useScrollAnimation } from "./hook/useScrollAnimation";
 
 const HeroSection = () => {
   const [heroRef, heroVisible] = useScrollAnimation(0.1);
-  const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {
-        setLoaded(true);
-    }, []);
 
   return (
-    <section className="relative flex items-center justify-center overflow-hidden">
+    <section className="relative flex items-center justify-center overflow-hidden z-0">
       {/* ✅ Wrapper qui prend toute la largeur, sans marges blanches */}
       <div className="relative w-full overflow-hidden rounded-b-[50px]">
         {/* Background Image */}
