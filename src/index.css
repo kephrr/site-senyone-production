@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SENYONE Design System */
+@layer base {
+  :root {
+    /* Brand Colors - Converted to HSL */
+    --brand-primary: 188 100% 31%; /* #00929e - SENYONE teal */
+    --brand-coral: 1 87% 63%; /* #e44849 - Coral red */
+    --brand-orange: 20 84% 59%; /* #ed6e3d - Orange */
+    --brand-green: 101 94% 45%; /* #54df09 - Green accent */
+    --brand-pink: 331 89% 59%; /* #f5387f - Pink accent */
+    --brand-cyan: 189 66% 50%; /* #33b9cc - Light cyan */
+    --brand-blue: 207 100% 50%; /* #009aff - Blue */
+    
+    /* Neutrals */
+    --neutral-50: 0 0% 95%; /* #f3f3f3 */
+    --neutral-100: 0 0% 90%; /* #e6e6e6 */
+    --neutral-200: 0 0% 87%; /* #dedede */
+    --neutral-300: 0 0% 85%; /* #d9d9d9 */
+    --neutral-400: 0 0% 77%; /* #c5c5c5 */
+    --neutral-500: 0 0% 56%; /* #8f8f8f */
+    --neutral-600: 0 0% 47%; /* #797979 */
+    --neutral-700: 0 0% 22%; /* #383838 */
+    --neutral-800: 220 9% 24%; /* #3c3c43 */
+    --neutral-900: 0 0% 12%; /* #1e1e1e */
+    --neutral-950: 0 0% 1%; /* #020202 */
+    
+    /* Semantic Colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 12%;
+    --navbar-bg: 0 0% 8%; /* Dark navbar background */
+    --hero-overlay: 0 0% 0% / 0.6; /* Hero background overlay */
+    
+    /* Hero Gradient */
+    --hero-gradient: linear-gradient(135deg, 
+      hsl(188 100% 31% / 0.9) 0%, 
+      hsl(188 100% 25% / 0.95) 50%, 
+      hsl(220 9% 24% / 0.9) 100%);
+    
+    /* Button Colors */
+    --button-primary: 1 87% 63%; /* Coral */
+    --button-primary-hover: 1 87% 58%;
+    --button-secondary: 188 100% 31%; /* Teal */
+    --button-secondary-hover: 188 100% 28%;
+    --button-white: 0 0% 100%;
+    --button-white-hover: 0 0% 95%;
+    
+    /* Typography */
+    --font-neue-plak: "Neue Plak", system-ui, sans-serif;
+    --font-jakarta: "Plus Jakarta Sans", system-ui, sans-serif;
+    --font-inter: "Inter", system-ui, sans-serif;
+    
+    /* Font Sizes */
+    --text-xs: 0.75rem; /* 12px */
+    --text-sm: 0.875rem; /* 14px */
+    --text-base: 1rem; /* 16px */
+    --text-lg: 1.125rem; /* 18px */
+    --text-xl: 1.25rem; /* 20px */
+    --text-2xl: 1.5rem; /* 24px */
+    --text-3xl: 2rem; /* 32px */
+    --text-4xl: 2.5rem; /* 40px */
+    --text-5xl: 3rem; /* 48px */
+    --text-6xl: 4rem; /* 64px */
+    --text-7xl: 6rem; /* 96px */
+    
+    /* Border Radius */
+    --radius-sm: 2.3125rem; /* 5px */
+    --radius: 0.625rem; /* 10px */
+    --radius-md: 0.9375rem; /* 15px */
+    --radius-lg: 1.25rem; /* 20px */
+    --radius-xl: 1.875rem; /* 30px */
+    --radius-2xl: 4.125rem; /* 50px */
+    --radius-full: 70%;
+    
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    
+    /* Animations */
+    --transition-all: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-colors: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-neutral-200;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    font-family: var(--font-inter);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-jakarta);
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-gradient {
+    background: var(--hero-gradient);
+  }
+  
+  .hero-bg-pattern {
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(120, 200, 255, 0.2) 0%, transparent 50%);
+  }
+  
+  /* Button Variants */
+  .btn-coral {
+    @apply bg-brand-coral hover:bg-brand-coral/90 text-white border-0 rounded-[var(--radius-xl)] px-8 py-4 font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+  }
+  
+  .btn-teal {
+    @apply bg-brand-primary hover:bg-brand-primary/90 text-white border-0 rounded-[var(--radius-xl)] px-8 py-4 font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+  }
+  
+  .btn-white {
+    @apply bg-white hover:bg-neutral-50 text-neutral-900 border-0 rounded-[var(--radius-xl)] px-8 py-4 font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+  }
+  
+  /* Navbar Styles */
+  .navbar-glass {
+    @apply bg-neutral-900/80 backdrop-blur-xl border border-neutral-700/50;
+    border-radius: var(--radius-xl);
+  }
+  
+  /* Typography */
+  .hero-title {
+    font-family: var(--font-jakarta);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  
+  .hero-subtitle {
+    font-family: var(--font-inter);
+    font-size: 1.125rem;
+    font-weight: 400;
+    opacity: 0.9;
+  }
+}
+
+.font-neue-plak {
+  font-family: 'Neue Plak', system-ui, sans-serif;
+}
+
+.navbar-glass {
+  @apply bg-black/40 backdrop-blur-md border border-white/10 shadow-lg;
+}
+
+@font-face {
+  font-family: "Neue Plak";
+  src: url("/src/assets/fonts/NeuePlakText-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Plak";
+  src: url("/src/assets/fonts/NeuePlak-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Plak";
+  src: url("/src/assets/fonts/NeuePlak-Black.ttf") format("truetype");
+  font-weight: bolder;
+  font-style: normal;
+}

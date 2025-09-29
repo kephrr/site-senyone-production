@@ -1,0 +1,112 @@
+:root {
+  /* Colors */
+  --color-21: rgb(243, 243, 243);
+  --color-23: rgb(0, 146, 158);
+  --color-21: rgb(30, 30, 30);
+  --color-23: rgb(0, 0, 0);
+  --color-23: rgb(255, 255, 255);
+  --color-23: rgb(228, 72, 73);
+  --color-17: rgb(230, 230, 230);
+  --color-23: rgb(56, 56, 56);
+  --color-21: rgb(143, 143, 143);
+  --color-10: rgb(222, 222, 222);
+  --color-23: rgb(237, 110, 61);
+  --color-12: rgb(239, 239, 239);
+  --color-13: rgb(84, 223, 9);
+  --color-14: rgb(245, 56, 127);
+  --color-15: rgb(51, 185, 204);
+  --color-16: rgb(217, 217, 217);
+  --color-17: rgb(2, 2, 2);
+  --color-21: rgb(121, 121, 121);
+  --color-21: rgb(60, 60, 67);
+  --color-21: rgb(10, 122, 255);
+  --color-21: rgb(197, 197, 197);
+  --color-22: rgb(0, 153, 255);
+
+  /* Fonts */
+  --font-neue-plak: "Neue Plak";
+  --font-plus-jakarta: "Plus Jakarta Sans";
+  --font-inter: "Inter";
+  --font-spin-cycle: "Spin Cycle";
+
+  /* Font Sizes and Weights */
+  --font-30-size: 24px;
+  --font-30-weight: 400;
+  --font-30-size: 16px;
+  --font-30-weight: 400;
+  --font-28-size: 14px;
+  --font-28-weight: 400;
+  --font-29-size: 64px;
+  --font-29-weight: 400;
+  --font-29-size: 20px;
+  --font-29-weight: 400;
+  --font-18-size: 48px;
+  --font-18-weight: 400;
+  --font-20-size: 32px;
+  --font-20-weight: 400;
+  --font-9-size: 18px;
+  --font-9-weight: 400;
+  --font-14-size: 48px;
+  --font-14-weight: 700;
+  --font-30-size: 32px;
+  --font-30-weight: 500;
+  --font-30-size: 96px;
+  --font-30-weight: 700;
+  --font-30-size: 24px;
+  --font-30-weight: 500;
+  --font-30-size: 24px;
+  --font-30-weight: 700;
+  --font-30-size: 32px;
+  --font-30-weight: 700;
+  --font-30-size: 20px;
+  --font-30-weight: 700;
+  --font-29-size: 40px;
+  --font-29-weight: 400;
+  --font-29-size: 24px;
+  --font-29-weight: 400;
+  --font-29-size: 36px;
+  --font-29-weight: 400;
+  --font-20-size: 96px;
+  --font-20-weight: 400;
+  --font-29-size: 16px;
+  --font-29-weight: 500;
+  --font-29-size: 14px;
+  --font-29-weight: 500;
+  --font-30-size: 36px;
+  --font-30-weight: 700;
+  --font-29-size: 16px;
+  --font-29-weight: 500;
+  --font-30-size: 24px;
+  --font-30-weight: 600;
+  --font-30-size: 40px;
+  --font-30-weight: 700;
+  --font-29-size: 40px;
+  --font-29-weight: 500;
+  --font-27-size: 40px;
+  --font-27-weight: 600;
+  --font-30-size: 64px;
+  --font-30-weight: 700;
+  --font-30-size: 64px;
+  --font-30-weight: 400;
+
+  /* Border Radius */
+  --radius-30: 30px;
+  --radius-20: 20px;
+  --radius-50: 50px;
+  --radius-25: 25px;
+  --radius-15: 15px;
+  --radius-10: 10px;
+  --radius-5: 5px;
+  --radius-12: 12.5px;
+  --radius-225: 225px;
+  --radius-100: 100px;
+  --radius-2: 2px;
+
+  /* Opacities */
+  --opacity-light: 0.5600000023841858;
+  --opacity-thin: 0.699999988079071;
+  --opacity-5: 0.5;
+  --opacity-25: 0.25;
+  --opacity-75: 0.75;
+}
+
