@@ -1,151 +1,140 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export type Slide = {
+  id: number;
   title: string;
   description: string;
   image: string;
-  button?: string;
+  buttonText?: string;
+  buttonLink?: string;
 };
 
 type CarouselProps = {
   slides: Slide[];
+  height?: string;
   className?: string;
-  height?: string; // ex: "h-[500px]"
+  transitionSpeed?: number; // en secondes
 };
 
-// Variants pour le parallaxe
-const backgroundVariants = {
-  enter: (direction: number) => ({
-    y: direction > 0 ? -50 : 50,
-    opacity: 0,
-  }),
-  center: { y: 0, opacity: 1 },
-  exit: (direction: number) => ({
-    y: direction > 0 ? 50 : -50,
-    opacity: 0,
-  }),
-};
+export const Carousel: React.FC<CarouselProps> = ({
+  slides,
+  height = "h-[500px]",
+  className,
+  transitionSpeed = 0.45,
+}) => {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState<"up" | "down">("up");
 
-const textVariants = {
-  enter: (direction: number) => ({
-    y: direction > 0 ? 50 : -50,
-    opacity: 0,
-  }),
-  center: { y: 0, opacity: 1 },
-  exit: (direction: number) => ({
-    y: direction > 0 ? -50 : 50,
-    opacity: 0,
-  }),
-};
-
-export function Carousel({ slides, className = "", height = "h-[500px]" }: CarouselProps) {
-  const [[index, direction], setIndex] = useState<[number, number]>([0, 0]);
-
-  if (slides.length === 0) return null;
+  if (!slides || slides.length === 0) return null;
 
   const nextSlide = () => {
-    setIndex(([prev]) => [
-      (prev + 1) % slides.length,
-      1,
-    ]);
+    setDirection("up");
+    setCurrent((prev) => (prev + 1) % slides.length);
   };
 
   const prevSlide = () => {
-    setIndex(([prev]) => [
-      (prev - 1 + slides.length) % slides.length,
-      -1,
-    ]);
+    setDirection("down");
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  const slide = slides[index];
+  const variantsBackground = {
+    enter: (dir: "up" | "down") => ({ y: dir === "up" ? "100%" : "-100%" }),
+    center: { y: "0%" },
+    exit: (dir: "up" | "down") => ({ y: dir === "up" ? "-100%" : "100%" }),
+  };
+
+  const variantsText = {
+    enter: (dir: "up" | "down") => ({ y: dir === "up" ? "-100%" : "100%" }),
+    center: { y: "0%" },
+    exit: (dir: "up" | "down") => ({ y: dir === "up" ? "100%" : "-100%" }),
+  };
 
   return (
-    <div className={`relative w-full overflow-hidden rounded-3xl ${height} ${className}`}>
-      <AnimatePresence custom={direction} mode="wait">
-        <motion.div
-          key={index}
-          custom={direction}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="absolute inset-0 w-full h-full"
-        >
-          {/* Fond avec mouvement vers le haut */}
+    <div className={cn("relative w-full overflow-hidden rounded-3xl", height, className)}>
+      {/* Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <AnimatePresence initial={false} custom={direction}>
           <motion.img
-            src={slide.image}
-            alt="slide background"
+            key={`${slides[current].id}-bg`}
+            src={slides[current].image}
+            alt={slides[current].title}
             custom={direction}
-            variants={backgroundVariants}
-            transition={{ duration: 1, ease: "easeInOut" }}
-            className="absolute inset-0 w-full h-full object-cover"
+            variants={variantsBackground}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: transitionSpeed, ease: "easeInOut" }}
+            className="absolute inset-0 w-full h-full object-cover will-change-transform"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+        </AnimatePresence>
 
-          {/* Texte avec mouvement vers le bas */}
-          <motion.div
-            custom={direction}
-            variants={textVariants}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="relative z-10 flex flex-col justify-center h-full px-12 md:px-20 text-white max-w-2xl"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              {slide.title}
-            </h2>
-            <p className="text-base md:text-lg mb-6 opacity-90">
-              {slide.description}
-            </p>
-            {slide.button && (
-              <button className="bg-white text-black font-semibold px-6 py-3 rounded-full w-fit shadow-lg hover:bg-gray-100 transition">
-                {slide.button}
-              </button>
-            )}
-          </motion.div>
-        </motion.div>
-      </AnimatePresence>
+        {/* Layer noir semi-transparent 60% */}
+        <div className="absolute inset-0 bg-black/60 pointer-events-none" />
 
-      {/* Contrôles */}
-      <div className="absolute bottom-6 right-6 flex gap-3 z-20">
+        {/* Gradient overlay #000000 0% → #00929E 100% */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: "linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,146,158,1) 100%)",
+          }}
+        />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 h-full">
+        <div className="absolute inset-0 flex items-center overflow-hidden">
+          <AnimatePresence initial={false} custom={direction}>
+            <motion.div
+              key={`${slides[current].id}-text`}
+              custom={direction}
+              variants={variantsText}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: transitionSpeed, ease: "easeInOut" }}
+              className="absolute inset-0 flex flex-col justify-center p-10 w-full h-full"
+            >
+              <div className="w-full max-w-4xl mx-auto text-white">
+                {/* Titre avec taille fixe 75px */}
+                <h2 className="text-[75px] font-bold mb-4 leading-tight font-neue-plak">
+                  {slides[current].title}
+                </h2>
+                <p className="mb-6 text-lg opacity-95">{slides[current].description}</p>
+                {slides[current].buttonText && (
+                  <a
+                    href={slides[current].buttonLink}
+                    className="inline-block bg-white text-black px-12 py-2 rounded-3xl font-medium hover:bg-gray-200 transition"
+                  >
+                    {slides[current].buttonText}
+                  </a>
+                )}
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </div>
+
+      {/* Controls */}
+      <div className="absolute bottom-4 right-4 flex gap-2 z-20">
         <button
           onClick={prevSlide}
-          className="p-2 bg-white/80 hover:bg-white rounded-full shadow-md"
+          className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/40 transition"
+          aria-label="Précédent"
         >
-          <ChevronLeft className="w-5 h-5 text-black" />
+          ◀
         </button>
         <button
           onClick={nextSlide}
-          className="p-2 bg-white/80 hover:bg-white rounded-full shadow-md"
+          className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/40 transition"
+          aria-label="Suivant"
         >
-          <ChevronRight className="w-5 h-5 text-black" />
+          ▶
         </button>
       </div>
     </div>
   );
-}
+};
 
-/*
-Exemple d'utilisation :
-
-const slides: Slide[] = [
-  {
-    title: "Pilotez votre croissance en toute sérénité.",
-    description:
-      "Notre solution allie puissance technologique et expertise comptable. Bénéficiez de clôtures accélérées, de rapprochements automatiques et d'une conformité OHADA garantie pour une direction financière agile et sécurisée.",
-    image:
-      "https://images.unsplash.com/photo-1581090700227-4c4c4cde1b29?auto=format&fit=crop&w=1600&q=80",
-    button: "En savoir plus",
-  },
-  {
-    title: "Optimisez vos processus d'achat.",
-    description:
-      "Maîtrisez vos coûts et simplifiez vos approvisionnements grâce à nos solutions innovantes.",
-    image:
-      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1600&q=80",
-    button: "Découvrir",
-  },
-];
-
-<Carousel slides={slides} height="h-[600px]" />
-*/
+export default Carousel;
