@@ -22,7 +22,7 @@ export default function IlsNousOntFaitConfiance() {
         <img className="max-h-[50px] w-auto" src={orange} alt="Orange" />
         <img className="max-h-[50px] w-auto" src={wave} alt="Wave" />
 
-        <div className="w-full h-full absolute bg-sky-500 mix-blend-hue">
+        <div className="w-full h-full absolute bg-[#00929E] mix-blend-hue">
 
         </div>
       </div>
