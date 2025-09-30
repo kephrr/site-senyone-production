@@ -6,6 +6,7 @@ import { MetricsSection } from "@/components/MetriqueSection";
 import Screenshots from "@/components/ScreenshotsSection";
 import QuiSommesNousSection from "@/components/QuiAdonsNousSection";
 import NosReussitesClient from "@/components/NosReussitesClient";
+import IlsNousOntFaitConfiance from "@/components/IlsNousOntFaitConfiance";
 
 const Index = () => {
   return (
@@ -21,6 +22,7 @@ const Index = () => {
       <Defis />
       <QuiSommesNousSection />
       <NosReussitesClient />
+      <IlsNousOntFaitConfiance />
       <Footer />
     </div>
   );
