@@ -2,6 +2,7 @@ import { Carousel, Slide } from "./ui/carousel-full-width";
 import marketing from "@/assets/images/marketing.jpg";
 import ventes from "@/assets/images/ventes.jpg";
 
+
 const slides: Slide[] = [
   {
     id:1,

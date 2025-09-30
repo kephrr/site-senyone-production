@@ -5,6 +5,7 @@ import Defis from "@/components/DefisSection";
 import { MetricsSection } from "@/components/MetriqueSection";
 import Screenshots from "@/components/ScreenshotsSection";
 import QuiSommesNousSection from "@/components/QuiAdonsNousSection";
+import NosReussitesClient from "@/components/NosReussitesClient";
 
 const Index = () => {
   return (
@@ -19,6 +20,7 @@ const Index = () => {
       </div>
       <Defis />
       <QuiSommesNousSection />
+      <NosReussitesClient />
       <Footer />
     </div>
   );

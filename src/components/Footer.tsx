@@ -3,7 +3,7 @@ import logo from "../assets/images/logosenyone.png"; // Ton logo
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-16"> {/* Fond noir clair */}
+    <footer className="bg-[#383838] text-white py-16"> {/* Fond noir clair */}
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Logo Section */}
