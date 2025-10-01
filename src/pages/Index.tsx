@@ -7,6 +7,7 @@ import Screenshots from "@/components/ScreenshotsSection";
 import QuiSommesNousSection from "@/components/QuiAdonsNousSection";
 import NosReussitesClient from "@/components/NosReussitesClient";
 import IlsNousOntFaitConfiance from "@/components/IlsNousOntFaitConfiance";
+import EcosystemeTechnologique from "@/components/EcosystemeTechnologique";
 
 const Index = () => {
   return (
@@ -23,6 +24,7 @@ const Index = () => {
       <QuiSommesNousSection />
       <NosReussitesClient />
       <IlsNousOntFaitConfiance />
+      <EcosystemeTechnologique />
       <Footer />
     </div>
   );
