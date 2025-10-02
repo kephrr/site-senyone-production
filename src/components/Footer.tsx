@@ -20,9 +20,17 @@ const Footer = () => {
           {/* Nos ressources */}
           <div className="lg:col-span-1">
             <h3 className="text-white font-plus-jakarta font-semibold text-sm mb-6">
-              Nos ressources
+              
             </h3>
             <ul className="space-y-3 text-xs">
+              <li>
+                <a 
+                  href="/ressources" 
+                  className="text-white hover:text-gray-300 transition-colors "
+                >
+                  Nos ressources
+                </a>
+              </li>
               <li>
                 <a 
                   href="#" 
@@ -33,7 +41,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="#" 
+                  href="/blog" 
                   className="text-white hover:text-gray-300 transition-colors "
                 >
                   Blog
