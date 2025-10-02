@@ -7,6 +7,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import rpa from "@/assets/images/rpa2.jpg";
 
 type ArticleCardProps = {
   title: string;
@@ -59,3 +60,24 @@ export default function ArticleCard({
     </div>
   );
 }
+
+export const Guide =() =>{
+  return(
+    <div className="w-64 rounded-lg overflow-hidden shadow-md border bg-white">
+      {/* Image */}
+      <div className="w-full h-40">
+        <img
+          src={rpa}
+          alt="image"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Contenu card */}
+      <div className="p-4 flex flex-col gap-2">
+        <h3 className="font-semibold text-sm">Guide téléchargeable</h3>
+        <p className="text-xs text-muted-foreground">Document PDF</p>
+        <Button className="mt-2 w- bg-[#00929E] text-white">Télécharger</Button>
+      </div>
+    </div>
+)}
