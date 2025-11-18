@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import { ValuesSection } from "@/components/ValuesSection";
-import { NotreMissionSection } from "@/components/NotreMissionsSection";
+import { NotreEquipeSection } from "@/components/NotreEquipeSection";
 import { MissionsSection } from "@/components/MissionSection";
 import Footer from "@/components/Footer";
 
@@ -19,7 +19,7 @@ const QuiSommesNous = () => {
       
       <MissionsSection />
       <ValuesSection />
-      <NotreMissionSection />
+      <NotreEquipeSection />
       <Footer />
     </div>
   );

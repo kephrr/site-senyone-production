@@ -8,7 +8,7 @@ interface MissionCardProps {
   variant?: 'white' | 'gradient';
 }
 
-export const MissionCard = ({ 
+export const NotreEquipeCard = ({ 
   icon, 
   title, 
   description, 
