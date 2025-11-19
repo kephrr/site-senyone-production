@@ -3,8 +3,12 @@ import HeroSection from "@/components/HeroSection";
 import { ValuesSection } from "@/components/ValuesSection";
 import { NotreEquipeSection } from "@/components/NotreEquipeSection";
 import { MissionsSection } from "@/components/MissionSection";
+import { NotreApprocheSection } from "@/components/NotreApprocheSection";
+import { NosResultatsChiffres } from "@/components/NosResultatsChiffres";
 import Footer from "@/components/Footer";
-
+import { Banniere } from "@/components/Banniere";
+import { EngagementRSE } from "@/components/EngagementRSE";
+import { Button } from "@/components/ui/button";
 
 const QuiSommesNous = () => {
   return (
@@ -20,6 +24,11 @@ const QuiSommesNous = () => {
       <MissionsSection />
       <ValuesSection />
       <NotreEquipeSection />
+      <NotreApprocheSection />
+      <NosResultatsChiffres />
+      <EngagementRSE />
+      
+      <Banniere />
       <Footer />
     </div>
   );
