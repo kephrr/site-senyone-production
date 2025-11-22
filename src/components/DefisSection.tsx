@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { useScrollAnimation } from "./hook/useScrollAnimation";
+import { PropertyDefault } from "./ui/zero-paper-animation";
+import { ConnectingTasksAnimation } from "./ui/connecting-tasks-animation";
 
 export default function HomePage() {
   const [heroRef, heroVisible] = useScrollAnimation(0.1);
@@ -25,19 +27,8 @@ export default function HomePage() {
         <div className="grid md:grid-cols-3 gap-2 mb-16 font-neue-plak-normal">
           {/* Card 1: Digitalisation Zero Paper */}
           <Card className="p-8 bg-white rounded-2xl shadow-lg border-0">
-            <div className="mb-6">
-              <div className="relative w-full h-32 mb-4">
-                {/* Document mockups */}
-                <div className="absolute left-4 top-0 w-16 h-20 bg-[#e6e6e6] rounded border-2 border-[#d9d9d9]"></div>
-                <div className="absolute left-12 top-2 w-16 h-20 bg-[#e6e6e6] rounded border-2 border-[#d9d9d9]"></div>
-                <div className="absolute left-20 top-4 w-16 h-20 bg-[#e6e6e6] rounded border-2 border-[#d9d9d9]"></div>
-                {/* Orange icon */}
-                <div className="absolute left-8 bottom-0 w-12 h-12 bg-[#ed6e3d] rounded-lg flex items-center justify-center">
-                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
-                  </svg>
-                </div>
-              </div>
+            <div className="mb-6 mx-auto">
+              <PropertyDefault />
             </div>
 
             <h3 className="text-xl font-semibold text-[#000000] mb-4 font-neue-plak">Digitalisation Zero Paper</h3>
@@ -62,17 +53,7 @@ export default function HomePage() {
             <div className="mb-6">
               <div className="relative w-full h-32 mb-4">
                 {/* Connecting tasks mockup */}
-                <div className="bg-white rounded-xl border border-[#e6e6e6] p-4 shadow-sm">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#f5387f] rounded-lg flex items-center justify-center">
-                      <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19,3H5C3.9,3 3,3.9 3,5V19C3.9,19 5,19 5,19H19C20.1,19 21,18.1 21,17V5C21,3.9 20.1,3 19,3M19,17H5V5H19V17Z" />
-                      </svg>
-                    </div>
-                    <span className="text-sm font-medium text-[#000000] font-neue-plak">Connecting tasks</span>
-                  </div>
-                </div>
-                <div className="absolute bottom-0 left-0 w-8 h-2 bg-[#54df09] rounded-full"></div>
+                <ConnectingTasksAnimation />
               </div>
             </div>
 

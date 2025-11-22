@@ -1,0 +1,25 @@
+/* Animation subtile de soulèvement pour un effet visuel doux */
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.paper-left {
+  transform: rotate(-5deg);
+  animation: subtleFloat 2s infinite ease-in-out;
+}
+
+.paper-right {
+  transform: rotate(5deg);
+  animation: subtleFloat 2s infinite ease-in-out;
+}
+
+/* Assurez-vous que l'animation est fluide */
+* {
+  box-sizing: border-box;
+  backface-visibility: hidden;
+}

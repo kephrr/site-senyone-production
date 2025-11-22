@@ -1,14 +1,14 @@
-import webDev from '@/assets/images/web-dev.jpg';
+import webDev from '@/assets/images/virtual-reality.png';
 
 export const Banniere = () => {
   return (
     <section
-      className="relative overflow-hidden"
+      className="relative overflow-hidden rounded-t-[50px]"
       style={{
         backgroundImage: `url(${webDev})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'top',
       }}
     >
         <div className="absolute inset-0 bg-[#00929E] opacity-50" />
