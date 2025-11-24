@@ -39,11 +39,18 @@ const App = () => (
           <Route path="/financiere" element={<QANFinanciere />} />
           <Route path="/commerciale" element={<QANCommerciale />} />
           <Route path="/achats-logistique" element={<QANAchatsLogistique />} />
-          <Route path="/Nos-solutions" element={<NosSolutions />} />
-          <Route path="/Nos-ressources" element={<NosRessources />} />
-          <Route path="/Blog" element={<Blog />} />
+          {
+            /*  
+            <Route path="/Nos-solutions" element={<NosSolutions />} />
+            <Route path="/Nos-ressources" element={<NosRessources />} />
+            <Route path="/Blog" element={<Blog />} />   
+            */
+          }
+          
+
           <Route path="/Contacts" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
+          
+          <Route path="*" element={<Index />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
