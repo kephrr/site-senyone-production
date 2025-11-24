@@ -8,7 +8,7 @@ const Screenshots = () => {
   const [sectionRef, sectionVisible] = useScrollAnimation(0.1);
 
   return (
-<div ref={sectionRef} className="relative w-full flex flex-col items-center justify-center min-h-screen -mt-40 z-10">
+<div ref={sectionRef} className="relative w-full flex flex-col items-center justify-center min-h-screen -mt-36 z-10">
       
       {/* Card principale */}
       <div className="w-full max-w-xl bg-white shadow-xl rounded-2xl px-6 py-20 relative">

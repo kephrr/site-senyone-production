@@ -61,7 +61,7 @@ const slides: Slide[] = [
 export function SecteurExpertiseSection() {
   return (
     <section className="">
-        <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto text-start mb-10 flex flex-col">
+        <div className="max-w-5xl px-4 sm:px-6 lg:px-8 mx-auto text-start mb-10 flex flex-col">
           <h2 className="text-xl md:text-3xl font-neue-plak font-bold text-gray-900 mb-10">
           Secteur d'expertise
             </h2>

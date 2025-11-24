@@ -4,7 +4,7 @@ import logo from "../assets/SENYONE-09.svg"; // Ton logo
 const Footer = () => {
   return (
     <footer className="bg-[#383838] text-white py-16 font-neue-plak-normal"> {/* Fond noir clair */}
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Logo Section */}
           <div className="lg:col-span-1">

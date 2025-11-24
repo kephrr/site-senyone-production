@@ -46,7 +46,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         {/* ✅ Contenu */}
         <div
           ref={heroRef}
-          className={`relative z-30 text-center px-6 ${maxWidth} mx-auto pt-32 pb-12 leading-tight transition-all duration-1000 delay-200 ${
+          className={`relative z-30 text-center px-6 ${maxWidth} mx-auto pt-28 pb-12 leading-tight transition-all duration-1000 delay-200 ${
             heroVisible ? "translate-x-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >

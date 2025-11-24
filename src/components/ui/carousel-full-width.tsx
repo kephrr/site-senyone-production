@@ -100,7 +100,7 @@ export const Carousel: React.FC<CarouselProps> = ({
               transition={{ duration: transitionSpeed, ease: "easeInOut" }}
               className="absolute inset-0 flex flex-col justify-center p-10 w-full h-full"
             >
-              <div className="w-full max-w-7xl mx-auto text-white">
+              <div className="w-full max-w-5xl mx-auto text-white">
                 {slides[current].badge && 
                   <span className="mb-6 text-lg opacity-95 p-2 border-[#00929E] border-2 rounded-md border-white">{slides[current].badge}</span>
                 }

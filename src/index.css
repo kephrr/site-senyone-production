@@ -169,6 +169,11 @@
   font-weight: normal
 }
 
+.font-neue-plak-regular {
+  font-family: 'Neue Plak', system-ui, sans-serif;
+  font-weight:300
+}
+
 .navbar-glass {
   @apply bg-black/40 backdrop-blur-md border border-white/10 shadow-lg;
 }

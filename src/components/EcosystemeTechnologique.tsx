@@ -11,7 +11,7 @@ export default function EcosystemeTechnologique() {
         className={`py-12 transition-all duration-1000 delay-200 ${
                         sectionVisible ? 'translate-x-0 opacity-100' : 'translate-y-10 opacity-0'
                     }`}>
-      <div className="max-w-7xl mx-auto text-start">
+      <div className="max-w-5xl mx-auto text-start">
         <h2 className="text-3xl font-bold font-neue-plak">Écosystème Technologique</h2>
         <p className="text-gray-600 mt-2 font-neue-plak-normal">
           Découvrez notre écosystème technologique.

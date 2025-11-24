@@ -79,9 +79,10 @@ const Navbar = () => {
   ]
 
   return (
-    <nav className={`fixed top-10 left-0 w-full z-50 transition-all duration-300`}>
-      <div className={`max-w-7xl mx-auto px-6`}>
-        <div className={`shadow-xl ${isScrolled ? 'bg-white text-gray-900' : 'navbar-glass text-white'} px-8 py-4 rounded-2xl transition-all duration-300`}>
+    <nav className={`fixed top-5 left-0 w-full z-50 transition-all duration-300`}>
+      <div className={`max-w-4xl mx-auto px-6`}>
+        <div className={`shadow-xl ${isScrolled ? 'bg-white text-gray-900' : 'navbar-glass text-white'} 
+        px-4 py-4 rounded-2xl transition-all duration-300`}>
         <div className="flex items-center justify-between ">
           {/* ✅ Logo */}
           <div className="flex items-center space-x-2">
@@ -89,19 +90,23 @@ const Navbar = () => {
             <img
               src={logo}
               alt="SENYONE"
-              className={`h-auto w-32 transition-all duration-300`}
+              className={`h-auto w-24 transition-all duration-300`}
             />
             </a>
           </div>
 
           {/* ✅ Navigation Links */}
           <div className="hidden md:flex items-center space-x-8 relative">
-            <a href="./Qui-sommes-Nous?" className={`${isScrolled ? 'text-gray-900 hover:text-gray-600' : 'text-white/90 hover:text-white'} transition-colors font-medium`}>
+            <a href="./Qui-sommes-Nous?" 
+            className={`${isScrolled ? 'text-gray-900 hover:text-gray-600' : 'text-white/90 hover:text-white'} 
+            transition-colors font-medium text-xs`}>
               Qui sommes-nous ?
             </a>
             <div className="">
               <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
-              className={`${isScrolled ? 'text-gray-900 hover:text-gray-600' : 'text-white hover:text-white/80'} flex items-center justify-between w-full py-2 px-3 rounded-xl font-medium text-heading md:w-auto md:hover:bg-transparent md:border-0 md:p-0`}>
+              className={`${isScrolled ? 'text-gray-900 hover:text-gray-600' : 'text-white hover:text-white/80'} 
+              flex items-center justify-between w-full py-2 px-3 rounded-xl text-xs
+              font-medium text-heading md:w-auto md:hover:bg-transparent md:border-0 md:p-0`}>
               Qui aidons-nous ? 
               <svg className="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke={isScrolled ? '#1f2937' : 'currentColor'} stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/></svg>
               </button>
@@ -115,7 +120,7 @@ const Navbar = () => {
                     {menuItems.map((item, index) => (
                       <li key={index}>
                         <a href={item.link} 
-                        className={`inline-flex items-center w-full p-2 
+                        className={`inline-flex items-center w-full p-2 text-xs
                         ${isScrolled 
                           ? 'hover:bg-gray-100 text-gray-700' 
                           : 'hover:bg-neutral-800 text-white hover:text-heading'} 
@@ -127,16 +132,18 @@ const Navbar = () => {
               </div>
             </div>
             <a href="Nos-solutions" 
-            className={`${isScrolled ? 'text-gray-900 hover:text-gray-600' : 'text-white/90 hover:text-white'} transition-colors font-medium`}>
+            className={`${isScrolled ? 'text-gray-900 hover:text-gray-600' : 'text-white/90 hover:text-white'} 
+            transition-colors font-medium text-xs`}>
               Nos solutions
             </a>
-            <a href="Blog" className={`${isScrolled ? 'text-gray-900 hover:text-gray-600' : 'text-white/90 hover:text-white'} transition-colors font-medium`}>
+            <a href="Blog" className={`${isScrolled ? 'text-gray-900 hover:text-gray-600' : 'text-white/90 hover:text-white'} 
+            transition-colors font-medium text-xs`}>
               Blog
             </a>
           </div>
 
           {/* ✅ Contact Button */}
-          <Button className="btn-coral md:block rounded-xl">
+          <Button className="btn-coral md:block rounded-xl text-xs">
              <a href="Contact" className="text-white/90 hover:text-white transition-colors font-medium">
               Nous contacter
             </a>

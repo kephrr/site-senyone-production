@@ -22,7 +22,7 @@ const SolutionsSurMesureSection = ({ cards }: SolutionsSurMesureSectionProps) =>
         sectionVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-start mb-12">
           <h2 className="text-xl md:text-3xl font-neue-plak font-bold text-gray-900">
             Nos solutions sur mesure concrètes

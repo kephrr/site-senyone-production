@@ -54,7 +54,7 @@ export default function TransformationCTA() {
       <div className="absolute inset-0 bg-gradient-to-br from-[#000000]/5 to-[#00929E]/90 z-20" />
       
       {/* Contenu */}
-      <div className="relative z-20 max-w-4xl mx-auto text-start">
+      <div className="relative z-20 max-w-5xl mx-auto text-start">
         {/* Titre principal */}
         <h1 className="text-4xl md:text-2xl mb-6 text-white ont-neue-plak-normal">
           Prêt à transformer ?

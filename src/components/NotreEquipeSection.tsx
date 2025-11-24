@@ -40,7 +40,7 @@ export const NotreEquipeSection = () => {
           background: "linear-gradient(to bottom, #ffffff 0%, #ffffff 40%, #00919e67 100%)",
         }}
       />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-start mb-4">
           <h2 className="text-xl md:text-3xl font-neue-plak font-bold text-gray-900 mb-4">Notre Equipe</h2>
           <p>Expertise multidisciplinaire au service de votre transformation</p>
