@@ -41,7 +41,7 @@ const CasClientSection = ({cases}: {cases: CasClient[]}) => {
       }`}
     >
       <div className="rounded-t-[40px] bg-gradient-to-b from-[#ED6E3D] via-[#E44849] to-[#E44849] text-white overflow-hidden px-8 md:px-12 py-10 md:py-14">
-        <div className="max-w-7xl px-8 mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
+        <div className="max-w-5xl px-8 mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
           {/* Texte */}
           <div className="flex-1">
             <Quote className="w-10 h-10 mb-6" />
@@ -51,8 +51,8 @@ const CasClientSection = ({cases}: {cases: CasClient[]}) => {
             <p className="text-base md:text-lg leading-relaxed mb-6 max-w-xl">
               "{current.quote}"
             </p>
-            <p className="text-sm md:text-base font-neue-plak">
-              {current.author}, <span className="font-bold">{current.company}</span>
+            <p className="text-xl font-neue-plak">
+              <span className="font-neue-plak-thin">{current.author}</span>, {current.company}
             </p>
 
             <div className="mt-8 flex gap-3">
@@ -74,7 +74,7 @@ const CasClientSection = ({cases}: {cases: CasClient[]}) => {
           </div>
 
           {/* Image circulaire, deux cercles empilés */}
-          <div className="flex flex-1 justify-center">
+          <div className="ml-52 flex flex-1 justify-center">
             <div className="relative w-60 h-60">
               {/* Cercle arrière (blanc) */}
               <div

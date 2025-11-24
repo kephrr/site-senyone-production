@@ -21,7 +21,7 @@ export const QuiAidonsNous = ({solutionsCards, cases, cards, heroText}: {solutio
         showButtons={false}
         maxWidth="max-w-8xl"
       />
-      <div className="max-w-7xl mx-auto p-4 sm:px-6 lg:px-8">  
+      <div className="max-w-5xl mx-auto p-4 sm:px-6 lg:px-8">  
         <div className="text-start mb-12 py-8">
             <h2 className="text-xl md:text-4xl font-neue-plak font-bold text-gray-900">Vos défis</h2>
             <p className="text-sm md:text-xl max-w-xl text-[#6B6B6B]">Nous sommes ravis de vous apporter notre aide dans le surpassement de vos défis quotidiens</p>

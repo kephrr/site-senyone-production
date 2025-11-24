@@ -144,7 +144,7 @@ const Navbar = () => {
 
           {/* ✅ Contact Button */}
           <Button className="btn-coral md:block rounded-xl text-xs">
-             <a href="Contact" className="text-white/90 hover:text-white transition-colors font-medium">
+             <a href="#" className="text-white/90 hover:text-white transition-colors font-medium">
               Nous contacter
             </a>
           </Button>

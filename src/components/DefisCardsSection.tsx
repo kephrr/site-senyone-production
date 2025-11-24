@@ -34,7 +34,7 @@ const DefiCard = ({ title, color, align, visible, delayClass }: DefiCardProps) =
             style={{ backgroundColor: color }}
           />
           <div className="flex-1 px-6 py-6 bg-white">
-            <p className="text-base md:text-xl text-[#383838] mb-6 font-neue-plak">
+            <p className="text-base md:text-xl text-[#383838] mb-6 font-neue-plak-thin">
               {title}
             </p>
             <Quote className="w-8 h-8" style={{ color }} />
@@ -60,7 +60,7 @@ const DefisCardsSection = ({ cards }: { cards: DefiCardProps[] }) => {
         sectionVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-10">
           <div className="space-y-10 mt-8">
             {leftCards.map((card, index) => (

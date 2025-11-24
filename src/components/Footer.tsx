@@ -25,7 +25,7 @@ const Footer = () => {
             <ul className="space-y-3 text-xs">
               <li>
                 <a 
-                  href="/ressources" 
+                  href="#" 
                   className="text-white hover:text-gray-300 transition-colors "
                 >
                   Nos ressources
@@ -41,7 +41,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="/blog" 
+                  href="#" 
                   className="text-white hover:text-gray-300 transition-colors "
                 >
                   Blog
@@ -53,26 +53,26 @@ const Footer = () => {
           {/* Qui sommes-nous ? */}
           <div className="lg:col-span-1">
             <h3 className="text-white font-semibold text-sm mb-6">
-              Qui sommes-nous ?
+              <a href="/Qui-sommes-Nous?">Qui sommes-nous ?</a>
             </h3>
             <ul className="space-y-3 text-xs">
               <li>
-                <a href="#" className="text-white hover:text-gray-300 transition-colors">
+                <a href="#mission" className="text-white hover:text-gray-300 transition-colors">
                   Notre mission
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white hover:text-gray-300 transition-colors">
+                <a href="#valeurs" className="text-white hover:text-gray-300 transition-colors">
                   Nos valeurs
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white hover:text-gray-300 transition-colors">
+                <a href="#equipe" className="text-white hover:text-gray-300 transition-colors">
                   Notre équipe
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white hover:text-gray-300 transition-colors">
+                <a href="#approche" className="text-white hover:text-gray-300 transition-colors">
                   Notre approche
                 </a>
               </li>
@@ -86,43 +86,44 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3 font-neue-plak-thin text-xs">
               <li>
-                <a href="#" className="text-white hover:text-gray-300 transition-colors">
+                <a href="/financiere" className="text-white hover:text-gray-300 transition-colors">
                   Direction financière
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white hover:text-gray-300 transition-colors">
-                  Direction des ressources humaines
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-white hover:text-gray-300 transition-colors">
-                  Direction Informatique
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-white hover:text-gray-300 transition-colors">
-                  Direction commerciale
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-white hover:text-gray-300 transition-colors">
-                  Direction Achats/Logistique
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-white hover:text-gray-300 transition-colors">
-                  Direction Marketing
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-white hover:text-gray-300 transition-colors">
+                <a href="juridique" className="text-white hover:text-gray-300 transition-colors">
                   Direction Juridique
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white hover:text-gray-300 transition-colors">
+                <a href="marketing" className="text-white hover:text-gray-300 transition-colors">
+                  Direction Marketing
+                </a>
+              </li>
+              <li>
+                <a href="commerciale" className="text-white hover:text-gray-300 transition-colors">
+                  Direction commerciale
+                </a>
+              </li>
+              <li>
+                <a href="ressources-humaines" className="text-white hover:text-gray-300 transition-colors">
+                  Direction des ressources humaines
+                </a>
+              </li>
+              <li>
+                <a href="operations-production" className="text-white hover:text-gray-300 transition-colors">
                   Direction des opérations
+                </a>
+              </li>
+              <li>
+                <a href="informatique" className="text-white hover:text-gray-300 transition-colors">
+                  Direction Informatique
+                </a>
+              </li>
+              
+              <li>
+                <a href="achats-logistique" className="text-white hover:text-gray-300 transition-colors">
+                  Direction Achats/Logistique
                 </a>
               </li>
             </ul>

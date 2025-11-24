@@ -14,6 +14,11 @@ import NosRessources from "./pages/NosRessources";
 import QANJuridique from "./pages/QANJuridique";
 import QANAchatsLogistique from "./pages/QANAchatsLogistique";
 import QANCommerciale from "./pages/QANCommerciale";
+import QANInformatique from "./pages/QANInformatique";
+import QANRessourcesHumaines from "./pages/QANRessourcesHumaines";
+import QANOperationProduction from "./pages/QANOperationProduction";
+import QANMarketing from "./pages/QANMarketing";
+import QANFinanciere from "./pages/QANFinanciere";
 
 const queryClient = new QueryClient();
 
@@ -27,12 +32,12 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/Qui-sommes-Nous?" element={<QuiSommesNous />} />
           <Route path="/juridique" element={<QANJuridique />} />
-          <Route path="/informatique" element={<QANJuridique />} />
-          <Route path="/ressources-humaines" element={<QANJuridique />} />
-          <Route path="/operations-production" element={<QANJuridique />} />
-          <Route path="/marketing" element={<QANJuridique />} />
-          <Route path="/financiere" element={<QANJuridique />} />
-          <Route path="/comerciale" element={<QANCommerciale />} />
+          <Route path="/informatique" element={<QANInformatique />} />
+          <Route path="/ressources-humaines" element={<QANRessourcesHumaines />} />
+          <Route path="/operations-production" element={<QANOperationProduction />} />
+          <Route path="/marketing" element={<QANMarketing />} />
+          <Route path="/financiere" element={<QANFinanciere />} />
+          <Route path="/commerciale" element={<QANCommerciale />} />
           <Route path="/achats-logistique" element={<QANAchatsLogistique />} />
           <Route path="/Nos-solutions" element={<NosSolutions />} />
           <Route path="/Nos-ressources" element={<NosRessources />} />
