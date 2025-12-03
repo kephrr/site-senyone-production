@@ -4,6 +4,7 @@ import logo from "../assets/images/logosenyone-copie.png"; // Ton logo
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const closeTimeoutRef = useRef<number | null>(null);
 
@@ -22,6 +23,13 @@ const Navbar = () => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+    if (isDropdownOpen) {
+      setIsDropdownOpen(false);
+    }
+  };
+
+  const toggleMobileDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   const handleDropdownMouseEnter = () => {
@@ -192,7 +200,7 @@ const Navbar = () => {
             isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className={`pt-4 pb-2 space-y-3 border-t ${isScrolled ? 'border-gray-200' : 'border-white/20'} mt-4`}>
+          <div className={`text-sm pt-4 pb-2 space-y-3 border-t ${isScrolled ? 'border-gray-200' : 'border-white/20'} mt-4`}>
             <a
               href="/Qui-sommes-nous"
               className={`block ${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white/90 hover:text-white hover:bg-white/10'} transition-colors font-medium py-2 px-2 rounded-lg`}
@@ -200,13 +208,36 @@ const Navbar = () => {
             >
               Qui sommes-nous ?
             </a>
-            <a
-              href="/Qui-aidons-nous"
-              className={`block ${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white/90 hover:text-white hover:bg-white/10'} transition-colors font-medium py-2 px-2 rounded-lg`}
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Qui aidons-nous ?
-            </a>
+            <div>
+              <button
+                onClick={toggleMobileDropdown}
+                className={`w-full text-left ${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white/90 hover:text-white hover:bg-white/10'} transition-colors font-medium py-2 px-2 rounded-lg flex items-center justify-between`}
+              >
+                Qui aidons-nous ?
+                <svg className="w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 9-7 7-7-7"/>
+                </svg>
+              </button>
+              
+              <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isDropdownOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'}`}>
+                <ul className="pl-4 pt-2 pb-2 space-y-1">
+                  {menuItems.map((item, index) => (
+                    <li key={index}>
+                      <a
+                        href={item.link}
+                        className={`block text-sm ${isScrolled ? 'text-gray-600 hover:bg-gray-100' : 'text-white/80 hover:bg-white/10'} transition-colors py-1 px-2 rounded`}
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          setIsDropdownOpen(false);
+                        }}
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
             <a
               href="#"
               className={`block ${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white/90 hover:text-white hover:bg-white/10'} transition-colors font-medium py-2 px-2 rounded-lg`}
@@ -221,20 +252,6 @@ const Navbar = () => {
             >
               Blog
             </a>
-            <div className="pt-2">
-              <Button
-                className={`${isScrolled ? 'bg-blue-600 hover:bg-blue-700' : 'btn-coral'} w-full rounded-xl`}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                 <a
-              href="/Contacts"
-              
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Nous contacter
-            </a>
-              </Button>
-            </div>
           </div>
         </div>
         </div>
