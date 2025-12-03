@@ -26,7 +26,7 @@ export const ValuesSection = () => {
 
   return (
     <section
-      className="py-16 rounded-b-[25px] relative overflow-hidden"
+      className="py-16 md:rounded-b-[50px] rounded-b-[25px] relative overflow-hidden"
       style={{
         backgroundImage: `url(${pattern})`,
         backgroundRepeat: 'repeat',

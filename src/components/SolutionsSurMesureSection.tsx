@@ -18,7 +18,7 @@ const SolutionsSurMesureSection = ({ cards }: SolutionsSurMesureSectionProps) =>
   return (
     <section
       ref={sectionRef}
-      className={`py-16  bg-white transition-all duration-1000 rounded-t-[50px] ${
+      className={`py-16 bg-white transition-all duration-1000 md:rounded-t-[50px] rounded-t-[25px] ${
         sectionVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
       }`}
     >

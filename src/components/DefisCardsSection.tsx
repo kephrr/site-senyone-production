@@ -56,13 +56,13 @@ const DefisCardsSection = ({ cards }: { cards: DefiCardProps[] }) => {
   return (
     <section
       ref={sectionRef}
-      className={`bg-[#f3f3f3] py-10 transition-all duration-1000 ${
+      className={`bg-[#f3f3f3] md:py-10 transition-all duration-1000 ${
         sectionVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
       }`}
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-10">
-          <div className="space-y-10 mt-8">
+      <div className="max-w-5xl mx-auto px-4 pb-8 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-y-10 gap-y-4 gap-x-10">
+          <div className="md:space-y-10 space-y-4 mt-8">
             {leftCards.map((card, index) => (
               <DefiCard
                 key={index}
@@ -74,7 +74,7 @@ const DefisCardsSection = ({ cards }: { cards: DefiCardProps[] }) => {
               />
             ))}
           </div>
-          <div className="space-y-10">
+          <div className="md:space-y-10 space-y-4">
             {rightCards.map((card, index) => (
               <DefiCard
                 key={index}
