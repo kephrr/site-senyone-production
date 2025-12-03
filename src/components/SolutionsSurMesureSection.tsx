@@ -33,24 +33,29 @@ const SolutionsSurMesureSection = ({ cards }: SolutionsSurMesureSectionProps) =>
           {cards.map((card, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl border border-[#E0E0E0] shadow-sm px-6 py-8 flex flex-col justify-between min-h-[260px]"
+              className="bg-white rounded-2xl border border-[#E0E0E0] shadow-sm 
+              md:px-6 md:py-8 p-4 flex flex-col justify-between md:min-h-[260px] min-h-[200px] gap-y-4 md:gap-y-0"
             >
               <div>
-                <div className="w-16 h-16 mb-6 flex items-center justify-center rounded-2xl bg-[#F5F5F5]">
-                  {card.icon}
+                <div className="flex gap-4 md:flex-col">
+                  <div className="w-16 h-16 mb-6 flex items-center justify-center rounded-2xl bg-[#F5F5F5]">
+                    {card.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-neue-plak font-bold text-[#383838] md:h-14 md:pb-2">
+                      {card.title}
+                    </h3>
+                    <hr className="border-t border-[#E0E0E0] my-4" />
+                    <ul className="list-disc list-inside space-y-1 text-xs leading-0 text-[#4F4F4F]">
+                      {card.items.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <h3 className="text-lg font-neue-plak font-bold text-[#383838] h-14 pb-2">
-                  {card.title}
-                </h3>
-                <hr className="border-t border-[#E0E0E0] my-4" />
-                <ul className="list-disc list-inside space-y-1 text-xs leading-0 text-[#4F4F4F]">
-                  {card.items.map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                </ul>
               </div>
 
-              <div className="mt-6">
+              <div className="md:mt-6">
                 <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#C4F2E5] text-[#008D92] text-xs font-medium">
                   {card.badge}
                 </span>
