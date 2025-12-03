@@ -5,6 +5,7 @@ import  microsoftAzure  from "@/assets/microsoft-azure.png"
 import  uiPath  from "@/assets/uipath.png"
 import  python  from "@/assets/python.png"
 import { Button } from "@/components/ui/button";
+import {Map, PenTool, FolderArchive, Cpu, GitPullRequestArrow, ClipboardPlus, Upload, ListRestart, Landmark, Keyboard, ImageUpscale, MessagesSquare} from "lucide-react";
 
 export default function Tabs() {
   const cardsTabOne = [
@@ -85,7 +86,8 @@ export default function Tabs() {
 
   const tabs = [
     { id: 1, label: "Digitalisation zero paper", 
-    content: (<div>
+    content: (
+    <div>
         <div className="text-center">
           <h2 className="text-sm font-neue-plak-normal text-gray-900 py-6">Du papier au digital en 4 semaines</h2>
         </div>
@@ -136,16 +138,16 @@ export default function Tabs() {
   const [active, setActive] = useState(1);
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-6">
+    <div className="w-full max-w-5xl mx-auto md:p-6">
       {/* Tab Buttons */}
       <div
-      className="flex bg-gray-200 p-2 rounded-sm justify-between max-w-xl mx-auto">
+      className="flex bg-gray-200 md:p-2 rounded-sm md:justify-between max-w-xl mx-auto">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActive(tab.id)}
-            className={`px-4 py-2 rounded-sm text-sm font-medium transition-all
-            ${active === tab.id ? "bg-cyan-600 text-white border-cyan-600" : " text-gray-700 border-gray-300"}`}
+            className={`px-4 py-2 md:rounded-sm text-xs md:text-sm font-medium transition-all
+            ${active === tab.id ? "bg-[#00929E] text-white border-cyan-600" : " text-gray-700 border-gray-300"}`}
           >
             {tab.label}
           </button>
@@ -170,24 +172,25 @@ function TabOne() {
   return (
     <div className="rounded-2xl shadow space-y-6 bg-repeat-x bg-cover" 
     style={{ backgroundImage: `url(${heroBg})`}}>
-    <h2 className="text-lg font-semibold p-6">Processus en 5 etapes</h2>
+    <h2 className="text-sm md:text-lg font-semibold p-6">Processus en 5 etapes</h2>
 
 
 {/* Processus en 5 étapes */}
 <div className="space-y-6">
     <div className="flex items-start justify-between w-full overflow-x-auto pb-4">
         {[
-        { num: 1, label: "Audit : Cartographie de vos flux papier (4 ateliers)" },
-        { num: 2, label: "Design : Conception des workflows numériques intégrés à vos outils (5 jours)" },
-        { num: 3, label: "Développement : Mise en œuvre (x jours)" },
-        { num: 4, label: "Déploiement : Migration progressive (x jours)" },
-        { num: 5, label: "Adoption : Formation et accompagnement (continu)" },
+            { num: 1, label: "Audit : Cartographie de vos flux papier (4 ateliers)" },
+            { num: 2, label: "Design : Conception des workflows numériques intégrés à vos outils (5 jours)" },
+            { num: 3, label: "Développement : Mise en œuvre (x jours)" },
+            { num: 4, label: "Déploiement : Migration progressive (x jours)" },
+            { num: 5, label: "Adoption : Formation et accompagnement (continu)" },
         ].map((step, index) => (
-        <div key={index} className="flex flex-col items-center text-center min-w-[160px] px-2">
-        <div className="w-12 h-12 rounded-full border-2 border-dashed flex items-center justify-center text-lg font-bold">
+        <div key={index} className="flex flex-col items-center 
+        text-center md:min-w-[160px] min-w-[100px] px-2">
+        <div className="md:w-12 md:h-12 w-8 h-8 rounded-full border-2 border-dashed flex items-center justify-center text-lg font-bold">
         {step.num}
         </div>
-            <p className="text-sm mt-2 text-white max-w-[160px]">{step.label}</p>
+            <p className="text-xs md:text-sm mt-2 text-white max-w-[160px]">{step.label}</p>
         </div>
         ))}
     </div>
@@ -196,13 +199,13 @@ function TabOne() {
 
 {/* Technologies utilisées */}
     <div className="p-6">
-        <h3 className="text-xl font-semibold mb-4">Technologies utilisées</h3>
-        <ul className="space-y-3 text-white p-4">
-            <li className="flex items-center gap-3"><span>📄</span> Capture intelligente (OCR/ICR)</li>
-            <li className="flex items-center gap-3"><span>🛠️</span> Design : Conception des workflows numériques intégrés (5 jours)</li>
-            <li className="flex items-center gap-3"><span>🤝</span> Workflows collaboratifs</li>
-            <li className="flex items-center gap-3"><span>✍️</span> Signature électronique</li>
-            <li className="flex items-center gap-3"><span>📦</span> Archivage légal</li>
+        <h3 className="text-sm md:text-xl font-semibold mb-4">Technologies utilisées</h3>
+        <ul className="space-y-3 text-white p-4 text-xs md:text-base">
+            <li className="flex items-center gap-3"><Map /> Capture intelligente (OCR/ICR)</li>
+            <li className="flex items-center gap-3"><PenTool /> Design : Conception des workflows numériques intégrés (5 jours)</li>
+            <li className="flex items-center gap-3"><GitPullRequestArrow /> Workflows collaboratifs</li>
+            <li className="flex items-center gap-3"><Cpu /> Signature électronique</li>
+            <li className="flex items-center gap-3"><FolderArchive />  Archivage légal</li>
         </ul>
     </div>
     
@@ -214,7 +217,7 @@ function TabTwo() {
  return (
     <div className="rounded-2xl shadow space-y-6 bg-repeat-x bg-cover" 
     style={{ backgroundImage: `url(${heroBg})`}}>
-    <h2 className="text-lg font-semibold p-6">Approche RAPID</h2>
+    <h2 className="text-sm md:text-lg font-semibold p-6">Approche RAPID</h2>
 
 
     {/* Processus en 5 étapes */}
@@ -228,7 +231,7 @@ function TabTwo() {
             { num: "D", label: "Déploiement & Support" },
             ].map((step, index) => (
             <div key={index} className="flex flex-col items-center text-center min-w-[160px] px-2">
-                <div className="w-12 h-12 rounded-full border-2 border-dashed flex items-center justify-center text-lg font-bold">
+                <div className="md:w-12 md:h-12 w-8 h-8 rounded-full border-2 border-dashed flex items-center justify-center text-lg font-bold">
                 {step.num}
                     </div>
                 <p className="text-sm mt-2 text-white max-w-[160px]">{step.label}</p>
@@ -240,13 +243,13 @@ function TabTwo() {
 
     {/* Technologies utilisées */}
         <div className="p-6">
-            <h3 className="text-xl font-semibold mb-4">Cas d'usage fréquents</h3>
-            <ul className="space-y-3 text-white p-4">
-                <li className="flex items-center gap-3"><span>📄</span> Saisie de commandes (2000/jour)</li>
-                <li className="flex items-center gap-3"><span>🛠️</span> Rapprochements bancaires (100% auto)</li>
-                <li className="flex items-center gap-3"><span>🤝</span> Génération de rapports (temps réel)</li>
-                <li className="flex items-center gap-3"><span>✍️</span> Relances clients (multi-canal)</li>
-                <li className="flex items-center gap-3"><span>📦</span> On-Boarding employés (J+0)</li>
+            <h3 className="text-sm md:text-xl font-semibold mb-4">Cas d'usage fréquents</h3>
+            <ul className="space-y-3 text-white p-4 text-xs md:text-base">
+                <li className="flex items-center gap-3"><Keyboard /> Saisie de commandes (2000/jour)</li>
+                <li className="flex items-center gap-3"><Landmark /> Rapprochements bancaires (100% auto)</li>
+                <li className="flex items-center gap-3"><ListRestart /> Génération de rapports (temps réel)</li>
+                <li className="flex items-center gap-3"><Upload /> Relances clients (multi-canal)</li>
+                <li className="flex items-center gap-3"><ClipboardPlus /> On-Boarding employés (J+0)</li>
             </ul>
         </div>
         
@@ -258,7 +261,7 @@ function TabThree() {
   return (
     <div className="rounded-2xl shadow space-y-6 bg-repeat-x bg-cover" 
     style={{ backgroundImage: `url(${heroBg})`}}>
-    <h2 className="text-lg font-semibold p-6">Approche RAPID</h2>
+    <h2 className="text-sm md:text-lg font-semibold p-6">Traitement documentaire</h2>
 
 
     {/* Processus en 5 étapes */}
@@ -271,10 +274,10 @@ function TabThree() {
             { num: 4, label: "Multi-langues (FR/EN/autre)" }
             ].map((step, index) => (
             <div key={index} className="flex flex-col items-center text-center min-w-[160px] px-2">
-                <div className="w-12 h-12 rounded-full border-2 border-dashed flex items-center justify-center text-lg font-bold">
+                <div className="md:w-12 md:h-12 w-8 h-8 rounded-full border-2 border-dashed flex items-center justify-center text-lg font-bold">
                 {step.num}
                     </div>
-                <p className="text-sm mt-2 text-white max-w-[160px]">{step.label}</p>
+                <p className="text-xs md:text-sm mt-2 text-white max-w-[160px]">{step.label}</p>
             </div>
             ))}
         </div>
@@ -283,11 +286,11 @@ function TabThree() {
 
     {/* Technologies utilisées */}
         <div className="p-6">
-            <h3 className="text-xl font-semibold mb-4">Cas d'usage fréquents</h3>
-            <ul className="space-y-3 text-white p-4">
-                <li className="flex items-center gap-3"><span>📄</span> Support client 24/7</li>
-                <li className="flex items-center gap-3"><span>🛠️</span> FAQ intelligente</li>
-                <li className="flex items-center gap-3"><span>🤝</span> Escalade contextuelle</li>
+            <h3 className="text-sm md:text-xl font-semibold mb-4">Cas d'usage fréquents</h3>
+            <ul className="space-y-3 text-white p-4 text-xs md:text-base">
+                <li className="flex items-center gap-3"><Keyboard /> Support client 24/7</li>
+                <li className="flex items-center gap-3"><MessagesSquare /> FAQ intelligente</li>
+                <li className="flex items-center gap-3"><ImageUpscale /> Escalade contextuelle</li>
             </ul>
         </div>
         <div className="p-6">
