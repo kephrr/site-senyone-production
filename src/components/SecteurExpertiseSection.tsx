@@ -61,10 +61,10 @@ const slides: Slide[] = [
 export function SecteurExpertiseSection() {
   return (
     <section className="">
-        <div className="max-w-5xl px-4 sm:px-6 lg:px-8 mx-auto text-start mb-10 flex flex-col">
+        <div className="max-w-5xl px-4 sm:px-6 lg:px-8 mx-auto text-start flex flex-col">
           <h2 className="text-xl md:text-3xl font-neue-plak font-bold text-gray-900 md:mb-10">
           Secteur d'expertise
-            </h2>
+          </h2>
         </div>
       <Carousel slides={slides} height="md:h-[600px] h-[400px]" colorType={false}  />
     </section>
