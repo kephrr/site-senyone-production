@@ -47,11 +47,23 @@ export const MissionsSection = () => {
           {/* Version mobile : cards en colonne */}
           <div className="mt-8 flex flex-col gap-4 w-full px-4 md:hidden">
             <img src={mission} className="h-96 w-auto rounded-xl"></img>
-            <img
-              src={screen2}
-              alt="Analitic card"
-              className="rounded-xl object-cover"
-            />
+            <div
+                className={`absolute left-[40px] top-56 -translate-y-1/2 
+                  max-w-[300px] shadow-2xl rounded-2xl p-6 leading-tight bg-white transition-all duration-1000 delay-500 ${
+                  sectionVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
+                }`}
+              >
+                {/* Droite */}
+                <h3 className="text-lg font-semibold mb-4">
+                  Démocratiser l'excellence opérationnelle par la technologie
+                </h3>
+                <Quote className="w-4 h-4 mb-4" color="#E44849" />
+                <p className="text-sm text-gray-700">
+                  Nous croyons que chaque entreprise, quelle que soit sa taille, mérite d'accéder aux bénéfices de
+                  l'automatisation et de l'intelligence artificielle. Notre mission est de rendre ces technologies
+                  accessibles, mesurables et rentables pour toutes les organisations ouest-africaines.
+                </p>
+              </div>
           </div>
         </div>
       </div>
