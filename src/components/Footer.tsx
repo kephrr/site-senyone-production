@@ -19,8 +19,8 @@ const Footer = () => {
 
           {/* Nos ressources */}
           <div className="lg:col-span-1">
-            <h3 className="text-white font-plus-jakarta font-semibold text-sm mb-6">
-              
+            <h3 className="text-[#383838] font-plus-jakarta font-semibold text-sm mb-6">
+              _
             </h3>
             <ul className="space-y-3 text-xs">
               <li>
@@ -137,26 +137,26 @@ const Footer = () => {
               </a>
               
             </h3>
-            <div className="space-y-4 font-neue-plak-thin text-xs">
-              <div>
-                <p className="text-white font-inter text-sm leading-relaxed">
+            <ul className="space-y-4 font-neue-plak-thin text-xs">
+              <li>
+                <p className="text-white font-inter leading-relaxed">
                   50 Cité Panoramique, Liberté 6<br />
                   Extension<br />
                   Dakar, Sénégal
                 </p>
-              </div>
-              <div>
+              </li>
+              <li>
                 <a href="tel:+221774592047" 
-                className="text-[#E44849] hover:text-gray-300 transition-colors font-inter">
+                className=" text-[#E44849] hover:text-gray-300 transition-colors font-inter">
                   +221 77 459 20 47
                 </a>
-              </div>
-              <div>
+              </li>
+              <li>
                 <a href="mailto:contact@senyone.sn" className="text-[#E44849] hover:text-gray-300 transition-colors font-inter ">
                   contact@senyone.sn
                 </a>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
 
