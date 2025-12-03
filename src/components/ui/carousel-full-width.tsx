@@ -27,7 +27,7 @@ type CarouselProps = {
 
 export const Carousel: React.FC<CarouselProps> = ({
   slides,
-  height = "h-[500px]",
+  height = "md:h-[500px] h-[300px]",
   className,
   transitionSpeed = 0.45,
   colorType = true,
@@ -137,7 +137,7 @@ export const Carousel: React.FC<CarouselProps> = ({
       </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full">
+      <div className="relative z-10 h-full ">
         <div className="absolute inset-0 flex items-center overflow-hidden">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div

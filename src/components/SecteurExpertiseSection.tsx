@@ -66,7 +66,7 @@ export function SecteurExpertiseSection() {
           Secteur d'expertise
             </h2>
         </div>
-      <Carousel slides={slides} height="h-[600px]" colorType={false}  />
+      <Carousel slides={slides} height="md:h-[600px] h-[400px]" colorType={false}  />
     </section>
   );
 }

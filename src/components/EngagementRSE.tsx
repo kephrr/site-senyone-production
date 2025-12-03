@@ -37,7 +37,7 @@ export const EngagementRSE = () => {
               key={item.title}
               className="relative flex justify-center pb-10"
             >
-              <div className="absolute bottom-0 right-0 translate-x-6 translate-y-6 w-[260px] h-[160px] rounded-xl overflow-hidden z-0 pointer-events-none">
+              <div className="absolute bottom-0 right-0 translate-x-2 translate-y-1 md:translate-x-4 md:translate-y-2 w-[260px] h-[160px] rounded-xl overflow-hidden z-0 pointer-events-none">
                 <img
                   src={engagementImg}
                   alt="Engagement RSE"
