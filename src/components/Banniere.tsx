@@ -1,6 +1,9 @@
 import webDev from '@/assets/images/virtual-reality.png';
+import { useState } from 'react';
 
 export const Banniere = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  
   return (
     <section
       className="relative overflow-hidden rounded-t-[50px]"
@@ -10,8 +13,13 @@ export const Banniere = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'top',
       }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-        <div className="absolute inset-0 bg-[#00929E] opacity-50" />
+      <div 
+        className={`absolute inset-0 mix-blend-color transition-colors duration-500 ${
+          isHovered ? 'bg-[#E44849]' : 'bg-[#00929E]'
+        }`}  />
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/10 to-[#00929E]/0" />
       <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/10 to-[#00929E]/0" />
 
