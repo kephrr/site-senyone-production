@@ -25,7 +25,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   return (
     <section id="hero-section" className="relative flex items-center justify-center overflow-hidden z-0">
-      <div className="relative w-full overflow-hidden rounded-b-[50px]">
+      <div className="relative w-full overflow-hidden rounded-b-[25px] md:rounded-b-[50px]">
         {/* Background Image */}
         <div
           className="absolute inset-0 z-0"
