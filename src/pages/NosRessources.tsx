@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import RoiForm from "@/components/RoiForm";
 import Guides from "@/components/GuideTelechargeables";
 import { Guide } from "@/components/ui/article";
+import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 
 
 const NosRessources = () => {
@@ -16,6 +17,7 @@ const NosRessources = () => {
         <Guides/>
       </div>
       <Footer />
+      <WhatsAppWidget />
     </div>
   );
 };

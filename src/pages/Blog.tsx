@@ -6,6 +6,7 @@ import rpaCover from "@/assets/images/rpa2.jpg";
 import ArticleCard from "@/components/ui/article";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
+import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 
 const Blog = () => {
 
@@ -145,6 +146,7 @@ const Blog = () => {
       </div>
     </div>
     <Footer />
+    <WhatsAppWidget />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
 import Tabs from "@/components/ParTechnologie";
+import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 
 
 const NosSolutions = () => {
@@ -14,6 +15,7 @@ const NosSolutions = () => {
       </div>
       <Tabs />
       <Footer />
+      <WhatsAppWidget />
     </div>
   );
 };

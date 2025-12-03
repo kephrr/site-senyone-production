@@ -9,6 +9,7 @@ import NosReussitesClient from "@/components/NosReussitesClient";
 import IlsNousOntFaitConfiance from "@/components/IlsNousOntFaitConfiance";
 import EcosystemeTechnologique from "@/components/EcosystemeTechnologique";
 import TransformationCTA from "@/components/PretAtransformerCTA";
+import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 
 const Index = () => {
   return (
@@ -28,6 +29,7 @@ const Index = () => {
       <EcosystemeTechnologique />
       <TransformationCTA />
       <Footer />
+      <WhatsAppWidget />
     </div>
   );
 };

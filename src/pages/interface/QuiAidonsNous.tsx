@@ -8,7 +8,7 @@ import { DefiCardProps } from "@/components/DefisCardsSection";
 import { HeroText } from "@/components/HeroSection";
 import { useScrollAnimation } from "@/components/hook/useScrollAnimation";
 import { CheckCircle2, Timer, BookOpenCheck } from "lucide-react";
-
+import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 
 export const QuiAidonsNous = ({solutionsCards, cases, cards, heroText}: {solutionsCards: SolutionCardProps[], cases: CasClient[], cards: DefiCardProps[], heroText: HeroText}) => {
   const [sectionRef, sectionVisible] = useScrollAnimation(0.1);
@@ -36,6 +36,7 @@ export const QuiAidonsNous = ({solutionsCards, cases, cards, heroText}: {solutio
       </div>
       
       <Footer />
+      <WhatsAppWidget />
     </div>
   );
 };
