@@ -23,7 +23,7 @@ export default function ArticleCard({
   content,
 }: ArticleCardProps) {
   return (
-    <div className="w-64 rounded-lg overflow-hidden shadow-md border bg-white">
+    <div className="w-full rounded-lg overflow-hidden shadow-md border bg-white">
       {/* Image */}
       <div className="w-full h-40">
         <img
@@ -63,7 +63,7 @@ export default function ArticleCard({
 
 export const Guide =() =>{
   return(
-    <div className="w-64 rounded-lg overflow-hidden shadow-md border bg-white">
+    <div className="w-full rounded-lg overflow-hidden shadow-md border bg-white">
       {/* Image */}
       <div className="w-full h-40">
         <img

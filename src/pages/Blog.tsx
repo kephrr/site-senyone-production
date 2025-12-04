@@ -95,7 +95,7 @@ const Blog = () => {
       <div className="relative">
         <HeroSection showButtons={false} title="Suivez notre actualité" />
       </div>
-      <div className="max-w-5xl my-12 mx-auto flex gap-6">
+      <div className="max-w-5xl px-8 md:px-0 my-12 mx-auto flex gap-6">
           <Input placeholder="Rechercher parmi les articles..." className="flex-2"/>
           <SelectGroup >
             <Select value="all" onValueChange={(value) => console.log(value)}>
@@ -113,7 +113,8 @@ const Blog = () => {
           </SelectGroup>
           <Input placeholder="Recherchez un article..." />
       </div>
-      <div className="flex max-w-4xl gap-10 justify-center mx-auto">
+      <div className="px-8 md:px-0 flex flex-col md:flex-row 
+      max-w-5xl gap-10 justify-center mx-auto">
         <div className="relative flex-1">
           <img
             src={rpaCover}
@@ -127,13 +128,14 @@ const Blog = () => {
         <div className="flex-1">
           <h1 className="font-neue-plak font-bold text-2xl">Automatisation robotisée des processus (RPA)</h1>
           <p className="mt-4 text-sm text-gray-700">
-            La RPA est une technologie permettant aux entreprises d'automatiser des tâches bureautiques répétitives, comme la saisie de données, l'extraction d'informations ou le copier-coller, en utilisant des robots logiciels ou...La RPA est une technologie permettant aux entreprises d'automatiser des tâches bureautiques répétitives, comme la saisie de données, l'extraction d'informations ou le copier-coller, en utilisant des robots logiciels ou...La RPA est une technologie permettant aux entreprises d'automatiser des tâches bureautiques répétitives, comme la saisie de données, l'extraction d'informations ou le copier-coller, en utilisant des robots logiciels ou...
+            La RPA est une technologie permettant aux entreprises d'automatiser des tâches bureautiques répétitives, comme la saisie de données, l'extraction d'informations ou le copier-coller, en utilisant des robots logiciels ou...
           </p>
           <Button className="mt-2 w- bg-[#00929E] text-white">Lire l'article en entier</Button>
         </div>
       </div>
-      <div className="p-8">
-        <div className="mx-auto max-w-4xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="px-8 py-8">
+        <div className="mx-auto max-w-5xl grid grid-cols-1 
+        sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {articles.map((article, index) => (
             <ArticleCard
               key={index}
