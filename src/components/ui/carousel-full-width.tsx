@@ -83,7 +83,9 @@ export const Carousel: React.FC<CarouselProps> = ({
       {/* Navigation Labels */}
       {showNavigation && (
         <div className="absolute top-0 left-0 right-0 z-20 bg-gradient-to-b from-black/60 to-transparent">
-          <div className="flex items-center justify-start gap-4 sm:gap-6 md:gap-8 lg:gap-12 px-4 sm:px-6 md:px-10 lg:px-10 py-4 sm:py-6 overflow-x-auto scrollbar-hide">
+          <div className="flex items-center justify-start gap-2 
+          sm:gap-6 md:gap-8 lg:gap-12 px-4 sm:px-6 md:px-10 lg:px-10 py-4 sm:py-6 
+          overflow-x-auto scrollbar-hide">
             {slides.map((slide, index) => (
               <button
                 key={slide.id}
@@ -151,18 +153,6 @@ export const Carousel: React.FC<CarouselProps> = ({
               className="absolute inset-0 flex flex-col justify-center px-4 md:px-0 md:p-10 w-full h-full"
             >
               <div className="w-full max-w-5xl mx-auto text-white">
-                {/*<div className="flex gap-6">
-                {slides.map((slide) => {
-                    return (  <span
-                        key={slide.id}
-                        className="mb-6 text-sm opacity-95 p-2 border-[#00929E] border rounded-md border-white"
-                      >
-                        {slide.badge}
-                      </span>
-                    )
-                })}
-                </div>*/}
-                
                 
                 {/* Titre avec taille fixe 75px */}
                 <h2 className="md:text-[75px] text-3xl font-bold mb-4 leading-tight font-neue-plak">

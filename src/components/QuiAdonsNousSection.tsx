@@ -22,7 +22,7 @@ const slides: Slide[] = [
     image: ventes,
     buttonText: "Découvrir",
     buttonLink: "/achats-logistique",
-    badge: "Direction Achats et Logistique"
+    badge: "Achats/Logistique"
   },
   {
     id:3,
@@ -32,7 +32,7 @@ const slides: Slide[] = [
     image: ventes,
     buttonText: "Découvrir",
     buttonLink: "/ressources-humaines",
-    badge: "Direction RH"
+    badge: "RH"
   },
   {
     id:4,
@@ -42,7 +42,7 @@ const slides: Slide[] = [
     image: ventes,
     buttonText: "En savoir plus",
     buttonLink: "/informatique",
-    badge: "Direction Informatique"
+    badge: "DSI & Innovations"
   },
   {
     id:5,
@@ -62,7 +62,7 @@ const slides: Slide[] = [
     image: ventes,
     buttonText: "En savoir plus",
     buttonLink: "/operations-production",
-    badge: "Direction des opérations"
+    badge: "Opérations/Production"
   },
 ];
 
