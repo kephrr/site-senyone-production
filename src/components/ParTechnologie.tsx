@@ -5,62 +5,32 @@ import  microsoftAzure  from "@/assets/microsoft-azure.png"
 import  uiPath  from "@/assets/uipath.png"
 import  python  from "@/assets/python.png"
 import { Button } from "@/components/ui/button";
-import {Map, PenTool, FolderArchive, Cpu, GitPullRequestArrow, ClipboardPlus, Upload, ListRestart, Landmark, Keyboard, ImageUpscale, MessagesSquare} from "lucide-react";
+import {Map, Layers2, PenTool, FolderArchive, Cpu, GitPullRequestArrow, ClipboardPlus, Upload, ListRestart, Landmark, Keyboard, ImageUpscale, MessagesSquare, Crosshair, Rabbit, Scale} from "lucide-react";
 
 export default function Tabs() {
   const cardsTabOne = [
     {
         id: 1, 
         icon: 
-        <svg width="35" height="35" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M37.5 6.25C43.5629 6.2489 49.4953 8.0115 54.574 11.323C59.6527 14.6345 63.6584 19.3518 66.103 24.9001C68.5476 30.4484 69.3253 36.588 68.3416 42.5706C67.3578 48.5532 64.655 54.1204 60.5625 58.5938" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M50 37.5L37.5 25L25 37.5" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M37.5 50V25" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M7.8125 27.7344C6.81672 30.7614 6.28979 33.923 6.25 37.1094" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M8.84375 50C10.5984 54.037 13.1862 57.6577 16.4375 60.625" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M14.4873 16.3593C15.3593 15.41 16.2892 14.5156 17.2717 13.6812" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M27.0127 66.9375C34.8055 69.7137 43.3811 69.2866 50.8596 65.75" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>, 
+        <Layers2 width={35} height={35} color="#009E7B" />,
         text: "Entre 50% et 80% de réduction d’utilisation de papier"
     },{
         id: 2, 
         icon: 
-        <svg width="35" height="35" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M37.5 6.25C43.5629 6.2489 49.4953 8.0115 54.574 11.323C59.6527 14.6345 63.6584 19.3518 66.103 24.9001C68.5476 30.4484 69.3253 36.588 68.3416 42.5706C67.3578 48.5532 64.655 54.1204 60.5625 58.5938" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M50 37.5L37.5 25L25 37.5" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M37.5 50V25" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M7.8125 27.7344C6.81672 30.7614 6.28979 33.923 6.25 37.1094" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M8.84375 50C10.5984 54.037 13.1862 57.6577 16.4375 60.625" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M14.4873 16.3593C15.3593 15.41 16.2892 14.5156 17.2717 13.6812" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M27.0127 66.9375C34.8055 69.7137 43.3811 69.2866 50.8596 65.75" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>, 
+        <Rabbit width={35} height={35} color="#009E7B"   />, 
         text: "Processus 5x plus rapide"
     },
-
-   
-
     {
         id: 3, 
         icon: 
-        <svg width="35" height="35" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M6.25 37.5H15.625" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M59.375 37.5H68.75" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M37.5 6.25V15.625" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M37.5 59.375V68.75" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M37.5 59.375C49.5812 59.375 59.375 49.5812 59.375 37.5C59.375 25.4188 49.5812 15.625 37.5 15.625C25.4188 15.625 15.625 25.4188 15.625 37.5C15.625 49.5812 25.4188 59.375 37.5 59.375Z" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M37.5 46.875C42.6777 46.875 46.875 42.6777 46.875 37.5C46.875 32.3223 42.6777 28.125 37.5 28.125C32.3223 28.125 28.125 32.3223 28.125 37.5C28.125 42.6777 32.3223 46.875 37.5 46.875Z" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>, 
+        <Crosshair width={35} height={35} color="#009E7B"   />, 
         text: "100% de traçabilité"
     },
 
     {
         id: 4, 
         icon: 
-        <svg width="35" height="35" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M50 50L59.375 25L68.75 50C66.0312 52.0312 62.75 53.125 59.375 53.125C56 53.125 52.7188 52.0312 50 50Z" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M6.25 50L15.625 25L25 50C22.2812 52.0312 19 53.125 15.625 53.125C12.25 53.125 8.96875 52.0312 6.25 50Z" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M21.875 65.625H53.125" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M37.5 9.375V65.625" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M9.375 21.875H15.625C21.875 21.875 31.25 18.75 37.5 15.625C43.75 18.75 53.125 21.875 59.375 21.875H65.625" stroke="#009E7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>, 
+        <Scale width={35} height={35} color="#009E7B" />, 
         text: "Conformité garantie"
 }
 
@@ -99,8 +69,8 @@ export default function Tabs() {
             {cardsTabOne.map((card, id)=>{
                 return(
                     <div className="flex gap-2 border rounded-lg p-4">
-                        {card.icon}
-                        <p className="text-gray-700"> {card.text} </p>
+                        <div className="">{card.icon}</div>
+                        <p className="text-gray-700 text-start"> {card.text} </p>
                     </div>
                 )
             })}
