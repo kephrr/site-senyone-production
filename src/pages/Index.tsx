@@ -18,8 +18,7 @@ const Index = () => {
       <Navbar />
       <HeroSection  />
       <div className="py-44">
-      <AutomationGraphic/>
-
+        <AutomationGraphic/>
       </div>
       <div className="mb-2">
         <MetricsSection />

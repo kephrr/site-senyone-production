@@ -766,6 +766,7 @@ const DetailedAnalysis: React.FC<DetailedAnalysisProps> = ({ answers, onClose })
     const annualCost = weeklyCost * 52;
     const automatableHours = hoursPerWeek * (automationRate / 100);
     const weeklySavings = automatableHours * costPerHour;
+    const monthlySavings = automatableHours * 4.5;
     const annualSavings = weeklySavings * 52;
     const roi = ((annualSavings - (annualSavings * 0.3)) / (annualSavings * 0.3)) * 100;
     
@@ -774,6 +775,7 @@ const DetailedAnalysis: React.FC<DetailedAnalysisProps> = ({ answers, onClose })
       annualCost: Math.round(annualCost),
       automatableHours: Math.round(automatableHours),
       weeklySavings: Math.round(weeklySavings),
+      monthlySavings: Math.round(monthlySavings),
       annualSavings: Math.round(annualSavings),
       roi: Math.round(roi),
       paybackPeriod: Math.round((annualSavings * 0.3) / weeklySavings * 12)

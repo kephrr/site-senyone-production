@@ -20,7 +20,7 @@ import QANRessourcesHumaines from "./pages/QANRessourcesHumaines";
 import QANOperationProduction from "./pages/QANOperationProduction";
 import QANMarketing from "./pages/QANMarketing";
 import QANFinanciere from "./pages/QANFinanciere";
-import TestPage from "./pages/RoiDiagPage";
+import RoiDiagPage from "./pages/RoiDiagPage";
 
 const queryClient = new QueryClient();
 
@@ -45,9 +45,7 @@ const App = () => (
           <Route path="/Nos-ressources" element={<NosRessources />} />
           <Route path="/Nos-solutions" element={<NosSolutions />} />
           <Route path="/Blog" element={<Blog />} />
-          <Route path="/fast-diagnostic" element={<TestPage />} />
-          
-
+          <Route path="/fast-diagnostic" element={<RoiDiagPage />} />
           <Route path="/Contacts" element={<Contact />} />
           
           <Route path="*" element={<Index />} />
