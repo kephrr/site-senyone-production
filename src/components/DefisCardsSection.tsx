@@ -1,5 +1,5 @@
 import { Quote } from "lucide-react";
-import { useScrollAnimation } from "./hook/useScrollAnimation";
+import { useScrollAnimation } from "./hooks/useScrollAnimation";
 
 export interface DefiCardProps {
   title: string;

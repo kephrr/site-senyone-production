@@ -2,7 +2,7 @@ import InfoCards from "./ui/liste-cards";
 import outilsDeReparation from "@/assets/images/outils-de-reparation.gif";
 import organigramme from "@/assets/images/organigramme.gif";
 import paiement from "@/assets/images/paiement.gif";
-import { useScrollAnimation } from "./hook/useScrollAnimation";
+import { useScrollAnimation } from "./hooks/useScrollAnimation";
 
 export default function EcosystemeTechnologique() {
     const [sectionRef, sectionVisible] = useScrollAnimation(0.1);

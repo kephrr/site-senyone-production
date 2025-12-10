@@ -2,7 +2,7 @@ import logo from "@/assets/logo.svg";
 import screen1 from "@/assets/screen1.svg";
 import screen2 from "@/assets/screen2.svg";
 import { useEffect, useState } from "react";
-import { useScrollAnimation } from "./hook/useScrollAnimation";
+import { useScrollAnimation } from "./hooks/useScrollAnimation";
 import { useVideoModal } from "@/contexts/VideoModalContext";
 
 const Screenshots = () => {

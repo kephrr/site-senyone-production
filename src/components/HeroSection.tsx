@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Calculator, Play, Settings } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import { useScrollAnimation } from "./hook/useScrollAnimation";
+import { useScrollAnimation } from "./hooks/useScrollAnimation";
 import VideoModal from "@/components/ui/VideoModal";
 import { useVideoModal } from "@/contexts/VideoModalContext";
 

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { useScrollAnimation } from "./hook/useScrollAnimation";
+import { useScrollAnimation } from "./hooks/useScrollAnimation";
 import { PropertyDefault } from "./ui/zero-paper-animation";
 import { ConnectingTasksAnimation } from "./ui/connecting-tasks-animation";
 

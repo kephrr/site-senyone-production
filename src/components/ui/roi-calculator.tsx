@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { usePDFGenerator } from '@/components/hook/usePDFGenerator';
+import { usePDFGenerator } from '@/components/hooks/usePDFGenerator';
 import { 
   ChevronLeft, 
   ChevronRight, 

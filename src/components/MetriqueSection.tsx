@@ -1,6 +1,6 @@
 import { EqualApproximately, CalendarSync, BanknoteIcon } from "lucide-react"
 import AnimatedSlidingText from "./ui/animated-sliding-text"
-import { useScrollAnimation } from "./hook/useScrollAnimation";
+import { useScrollAnimation } from "./hooks/useScrollAnimation";
 import pattern from "@/assets/images/pattern.png";
 
 export function MetricsSection() {

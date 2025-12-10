@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { useScrollAnimation } from "./hook/useScrollAnimation";
+import { useScrollAnimation } from "./hooks/useScrollAnimation";
 
 export interface SolutionCardProps {
   icon: ReactNode;

@@ -3,7 +3,7 @@ import cbao from "@/assets/images/cbao-seeklogo.com_.png";
 import atos from "@/assets/images/Atos_logo.png";
 import orange from "@/assets/images/Orange_logo.svg.png";
 import wave from "@/assets/images/wave-photo.png";
-import { useScrollAnimation } from "./hook/useScrollAnimation";
+import { useScrollAnimation } from "./hooks/useScrollAnimation";
 
 export default function IlsNousOntFaitConfiance() {
 

@@ -6,7 +6,7 @@ import SolutionsSurMesureSection, { SolutionCardProps } from "@/components/Solut
 import CasClientSection, { CasClient } from "@/components/CasClientSection";
 import { DefiCardProps } from "@/components/DefisCardsSection";
 import { HeroText } from "@/components/HeroSection";
-import { useScrollAnimation } from "@/components/hook/useScrollAnimation";
+import { useScrollAnimation } from "@/components/hooks/useScrollAnimation";
 import { CheckCircle2, Timer, BookOpenCheck } from "lucide-react";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 
