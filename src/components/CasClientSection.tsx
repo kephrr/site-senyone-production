@@ -55,7 +55,7 @@ const CasClientSection = ({cases}: {cases: CasClient[]}) => {
               <span className="font-neue-plak-thin">{current.author}</span>, {current.company}
             </p>
 
-            <div className="mt-8 flex gap-3">
+            {/*<div className="mt-8 flex gap-3">
               <button
                 type="button"
                 onClick={handlePrev}
@@ -70,7 +70,7 @@ const CasClientSection = ({cases}: {cases: CasClient[]}) => {
               >
                 Suivant
               </button>
-            </div>
+            </div>*/}
           </div>
 
           {/* Image circulaire, deux cercles empilés */}
