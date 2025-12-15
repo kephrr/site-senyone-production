@@ -13,7 +13,6 @@ const NosRessources = () => {
       <Navbar />
       <HeroSection showButtons={false} title="Nos Ressources" />
       <div className="max-w-5xl mx-auto px-8 md:px-0">
-        <RoiForm/>
         <Guides/>
       </div>
       <Footer />
