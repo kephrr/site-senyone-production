@@ -111,11 +111,14 @@ export const DetailedAnalysis: React.FC<DetailedAnalysisProps> = ({
         // Afficher un message de succès
         toast({
             title: "Succès",
-            description: "Votre rapport a été envoyé par email avec succès !",
+            description: "Votre rapport a été envoyé par email avec succès ! Vous serez renvoyés à l'acceuil dans 3 secondes",
             variant: "default",
         });
         setShowCompanyInfoModal(false)
-        
+        setTimeout(()=>{
+          window.location.href = '/';
+        }, 3000)
+
         
     } catch (error) {
         console.error('Erreur lors de l\'envoi de l\'email:', error);
@@ -559,3 +562,7 @@ export const DetailedAnalysis: React.FC<DetailedAnalysisProps> = ({
     </>
   );
 };
+function navigateToHome() {
+  throw new Error("Function not implemented.");
+}
+

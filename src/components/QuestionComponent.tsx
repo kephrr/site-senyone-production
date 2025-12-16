@@ -24,6 +24,7 @@ import {
   Folder,
   HelpCircle,
   History,
+  Home,
   Mail,
   MapPin,
   Percent,
@@ -1170,17 +1171,13 @@ const QuestionComponent: React.FC<QuestionProps> = ({
               <div className="flex items-center justify-between depth-3d-inner">
                 <button
                   onClick={onPrev}
-                  disabled={currentStep === 1}
-                  className={`
+                  className="
                     btn-3d flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-all duration-300
-                    ${currentStep === 1
-                      ? 'text-gray-400 cursor-not-allowed glass-effect'
-                      : `text-[#1E1E1E] hover:text-white glass-effect hover:bg-gradient-to-r hover:from-[#00929E] hover:to-[#007a85] 
-                         border border-white/20 hover:border-transparent`
-                    }
-                  `}
+                    text-[#1E1E1E] hover:text-white glass-effect hover:bg-gradient-to-r hover:from-[#00929E] hover:to-[#007a85] 
+                    border border-white/20 hover:border-transparent
+                  "
                 >
-                  <ChevronLeft className={`w-3 h-3 ${currentStep === 1 ? '' : 'group-hover:-translate-x-0.5'}`} />
+                  <ChevronLeft className="w-3 h-3 group-hover:-translate-x-0.5" />
                   <span className="font-semibold">Précédent</span>
                 </button>
                 
@@ -1260,6 +1257,9 @@ const QuestionComponent: React.FC<QuestionProps> = ({
 };
 
 
+
+
+
 const ThreeQuestionCalculator: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [answers, setAnswers] = useState<Record<string, QuestionAnswer>>({
@@ -1316,7 +1316,9 @@ const ThreeQuestionCalculator: React.FC = () => {
   const totalSteps = 3;
   const currentQuestion = questions.find(q => q.step === currentStep);
 
-
+  const navigateToHome = () => {
+    window.location.href = '/';
+  };
   const generatePDF = async (customAnswers: Record<string, QuestionAnswer>, companyInfo?: CompanyInfo) => {
     const savings = calculateSavingsUtil(customAnswers);
     const pdf = new jsPDF('p', 'mm', 'a4');
@@ -1502,15 +1504,15 @@ const ThreeQuestionCalculator: React.FC = () => {
         fontSize: 10,
         cellPadding: 5,
         lineColor: [parseInt(colors.grayBorder.slice(1, 3), 16), 
-                  parseInt(colors.grayBorder.slice(3, 5), 16), 
-                  parseInt(colors.grayBorder.slice(5, 7), 16)],
+                   parseInt(colors.grayBorder.slice(3, 5), 16), 
+                   parseInt(colors.grayBorder.slice(5, 7), 16)],
         lineWidth: 0.1,
         halign: 'center'
       },
       headStyles: {
         fillColor: [parseInt(colors.primary.slice(1, 3), 16), 
-                  parseInt(colors.primary.slice(3, 5), 16), 
-                  parseInt(colors.primary.slice(5, 7), 16)],
+                   parseInt(colors.primary.slice(3, 5), 16), 
+                   parseInt(colors.primary.slice(5, 7), 16)],
         textColor: 255,
         fontStyle: 'bold',
         fontSize: 10,
@@ -1518,13 +1520,13 @@ const ThreeQuestionCalculator: React.FC = () => {
       },
       bodyStyles: {
         textColor: [parseInt(colors.dark.slice(1, 3), 16), 
-                  parseInt(colors.dark.slice(3, 5), 16), 
-                  parseInt(colors.dark.slice(5, 7), 16)]
+                   parseInt(colors.dark.slice(3, 5), 16), 
+                   parseInt(colors.dark.slice(5, 7), 16)]
       },
       alternateRowStyles: {
         fillColor: [parseInt(colors.grayLight.slice(1, 3), 16), 
-                  parseInt(colors.grayLight.slice(3, 5), 16), 
-                  parseInt(colors.grayLight.slice(5, 7), 16)]
+                   parseInt(colors.grayLight.slice(3, 5), 16), 
+                   parseInt(colors.grayLight.slice(5, 7), 16)]
       },
       columnStyles: {
         0: { 
@@ -2041,17 +2043,32 @@ const ThreeQuestionCalculator: React.FC = () => {
     }
     
     try {
-      // Générer le PDF
-      const pdf = await generatePDF(answersToUse, companyInfoToUse);
+      // S'assurer que les valeurs numériques sont bien des nombres
+      const processedAnswers: Record<string, number> = {};
+      Object.entries(answersToUse).forEach(([key, value]) => {
+        processedAnswers[key] = typeof value === 'number' ? value : Number(value) || 0;
+      });
       
-      // Ici, vous devriez implémenter l'appel API pour l'envoi du PDF par email
-      // Par exemple : await sendPdfByEmail(pdf, companyInfoToUse.email);
+      // Générer le PDF avec les valeurs numériques
+      const pdf = await generatePDF(processedAnswers, companyInfoToUse);
       
-      // Enregistrer dans l'historique
+      // Créer un nom de fichier avec la date et le nom de l'entreprise
       const currentDate = new Date();
-      const timestamp = currentDate.toISOString().slice(0, 19).replace(/[:T]/g, '-');
-      const companyName = companyInfoToUse.companyName ? companyInfoToUse.companyName.replace(/\s+/g, '-') : 'entreprise';
-      const fileName = `rapport-automatisation-${companyName}-${timestamp}.pdf`;
+      const formattedDate = currentDate.toLocaleDateString('fr-FR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+      }).replace(/\//g, '-');
+      
+      const companyName = companyInfoToUse.companyName 
+        ? companyInfoToUse.companyName.replace(/[^a-z0-9]/gi, '_').toLowerCase() 
+        : 'rapport';
+      
+      const fileName = `rapport-automatisation_${companyName}_${formattedDate}.pdf`;
+      
+      // Télécharger le PDF localement
+      pdf.save(fileName);
+      
       return Promise.resolve();
     } catch (error) {
       console.error('Erreur lors de la génération du PDF:', error);
@@ -2078,14 +2095,19 @@ const ThreeQuestionCalculator: React.FC = () => {
   const handlePrev = () => {
     if (currentStep > 1) {
       setCurrentStep(prev => prev - 1);
+    } else {
+      // Rediriger vers la page d'accueil si on est à la première question
+      window.location.href = '/';
     }
   };
+
+  
 
   if (!hasStarted) {
     return (
       <>
         <GlobalStyles />
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#e6f7f9] via-white to-[#d0f0f3] p-4 depth-3d">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#e6f7f9] via-white to-[#d0f0f3] p-4 pt-16 depth-3d">
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-[#00929E]/10 to-[#007a85]/5 rounded-full blur-3xl animate-float floating-particle"></div>
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-tr from-[#e6f7f9]/20 to-transparent rounded-full blur-3xl animate-float floating-particle" style={{animationDelay: '1s'}}></div>
@@ -2122,8 +2144,22 @@ const ThreeQuestionCalculator: React.FC = () => {
                 ))}
               </div>
               
-              <div className="text-center">
+              <div className="text-center flex flex-wrap gap-4 justify-center">
+               
+
                 <button
+                  onClick={navigateToHome}
+                  className="relative overflow-hidden group px-4 py-2 
+                  bg-white border-gray-500 border text-gray-500 font-bold 
+                  rounded-lg text-sm transition-all duration-300 hover:opacity-90"
+                >
+                  <div className="absolute inset-0 bg-black/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                  <span className="relative flex items-center gap-1.5">
+                    <Home className="w-3.5 h-3.5" />
+                    Retour à l'acceuil
+                  </span>
+                </button>
+                 <button
                   onClick={() => setHasStarted(true)}
                   className="relative overflow-hidden group px-4 py-2 bg-gradient-to-r from-[#00929E] to-[#007a85] text-white font-bold rounded-lg text-sm transition-all duration-300 hover:opacity-90 btn-3d animate-glow"
                 >
@@ -2150,7 +2186,7 @@ const ThreeQuestionCalculator: React.FC = () => {
     return (
       <>
         <GlobalStyles />
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#e6f7f9] via-white to-[#d0f0f3] p-4 depth-3d">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#e6f7f9] via-white to-[#d0f0f3] p-4 pt-16 depth-3d">
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-[#00929E]/10 to-[#007a85]/5 rounded-full blur-3xl animate-float floating-particle"></div>
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-tr from-[#e6f7f9]/20 to-transparent rounded-full blur-3xl animate-float floating-particle" style={{animationDelay: '1s'}}></div>
