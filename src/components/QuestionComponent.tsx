@@ -1037,7 +1037,7 @@ const QuestionComponent: React.FC<QuestionProps> = ({
           <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-gradient-to-bl from-[#E44849]/5 to-transparent rounded-full blur-3xl animate-float floating-particle" style={{animationDelay: '0.5s'}}></div>
         </div>
 
-        <div className="sticky top-0 z-50">
+        <div className="sticky top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm">
           <div className="glass-effect-primary">
             <div className="max-w-2xl mx-auto px-4 py-3">
               <div className="flex items-center justify-between">
@@ -1178,7 +1178,7 @@ const QuestionComponent: React.FC<QuestionProps> = ({
                   "
                 >
                   <ChevronLeft className="w-3 h-3 group-hover:-translate-x-0.5" />
-                  <span className="font-semibold">Précédent</span>
+                  <span className="font-semibold">{currentStep === 1? "Acceuil" : "Précédent" } </span>
                 </button>
                 
                 <div className="flex items-center gap-3">
