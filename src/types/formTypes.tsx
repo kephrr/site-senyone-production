@@ -17,24 +17,9 @@ export function calculateSavings (answers?: Record<string, QuestionAnswer>) {
     
     const roi = ((roiNet) / implementationCost) * 100;
     const paybackPeriod = implementationCost / (annualSavings / 12);
-    const etpLibere = automatableHours * annualHours;
+    const etpLibere = automatableHours / annualHours;
 
-    console.log({
-      hoursPerWeek: hoursPerWeek,
-      costPerHour: costPerHour,
-      automationRate: automationRate,
-      weeklyCost: Math.round(weeklyCost),
-      annualCost: Math.round(annualCost),
-      automatableHours: Math.round(automatableHours),
-      weeklySavings: Math.round(weeklySavings),
-      annualSavings: Math.round(annualSavings),
-      roi: Math.round(roi),
-      roiNet: Math.round(roiNet),
-      paybackPeriod: paybackPeriod,
-      monthlySavings: Math.round(weeklySavings * 4.33),
-      implementationCost: Math.round(implementationCost),
-      etpLibere: etpLibere
-    })
+    const productivityRate = ((annualHours - automatableHours) / annualHours) *100
     return {
       hoursPerWeek: hoursPerWeek,
       costPerHour: costPerHour,
@@ -49,6 +34,7 @@ export function calculateSavings (answers?: Record<string, QuestionAnswer>) {
       paybackPeriod: Math.round(paybackPeriod),
       monthlySavings: Math.round(weeklySavings * 4.33),
       implementationCost: Math.round(implementationCost),
-      etpLibere: Math.round(etpLibere)
+      etpLibere: Math.round(etpLibere),
+      productivityRate: Math.round(productivityRate)
     };
 };

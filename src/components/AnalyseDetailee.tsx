@@ -56,41 +56,11 @@ export const DetailedAnalysis: React.FC<DetailedAnalysisProps> = ({
     emailjs.init(PUBLIC_KEY);
   }, [PUBLIC_KEY]);
 
-  // Vérifie la validité des informations de l'entreprise
-  const validateCompanyInfo = (info: CompanyInfo): { isValid: boolean; error?: string } => {
-    if (!info.email || typeof info.email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(info.email)) {
-      return { isValid: false, error: 'Veuillez fournir une adresse email valide.' };
-    }
-    
-    if (!info.nomCompletPerson || typeof info.nomCompletPerson !== 'string' || info.nomCompletPerson.trim().length < 2) {
-      return { isValid: false, error: 'Veuillez fournir un nom complet valide.' };
-    }
-    
-    if (!info.companyName || typeof info.companyName !== 'string' || info.companyName.trim().length < 2) {
-      return { isValid: false, error: 'Veuillez fournir un nom d\'entreprise valide.' };
-    }
-    
-    if (!info.phone || typeof info.phone !== 'string' || !/^[\d\s+.-]{10,20}$/.test(info.phone)) {
-      return { isValid: false, error: 'Veuillez fournir un numéro de téléphone valide.' };
-    }
-    
-    return { isValid: true };
-  };
-
+  // Mettre à jour la fonction handleSaveCompanyInfo
   const handleSendCompanyInfo = async (info: CompanyInfo) => {
-    // Validation des données
-    const validation = validateCompanyInfo(info);
-    if (!validation.isValid) {
-      toast({
-        variant: "destructive",
-        title: "Erreur de validation",
-        description: validation.error || "Une erreur inconnue est survenue.",
-      });
-      return;
-    }
-
     setCompanyInfo(info);
     setIsDownloading(true);
+
     
     try {
       const dateAujourdhui = new Date().toLocaleString('fr-FR', { 
@@ -102,6 +72,7 @@ export const DetailedAnalysis: React.FC<DetailedAnalysisProps> = ({
         hour12: false 
       }).replace(/\//g, '-').replace(',', ' ');
         // Envoyer l'email via EmailJS
+        let automatableHoursPerWeek = Math.round(savings.hoursPerWeek * savings.automationRate)
         const templateParams = {
           to_email: info.email,
           to_name: info.nomCompletPerson,
@@ -120,7 +91,9 @@ export const DetailedAnalysis: React.FC<DetailedAnalysisProps> = ({
           etpLibere: savings.etpLibere,
           roiNet: savings.roiNet,
           pourcentageROI: savings.roi,
-          periodeRetour: savings.paybackPeriod
+          periodeRetour: savings.paybackPeriod,
+          productivityRate: savings.productivityRate,
+          automatableHoursPerWeek: automatableHoursPerWeek
         };
 
         console.log(templateParams)
@@ -141,6 +114,8 @@ export const DetailedAnalysis: React.FC<DetailedAnalysisProps> = ({
             description: "Votre rapport a été envoyé par email avec succès !",
             variant: "default",
         });
+        setShowCompanyInfoModal(false)
+        
         
     } catch (error) {
         console.error('Erreur lors de l\'envoi de l\'email:', error);
@@ -498,7 +473,7 @@ export const DetailedAnalysis: React.FC<DetailedAnalysisProps> = ({
                       </li>
                       <li className="flex items-center gap-1 text-xs text-gray-600">
                         <div className="w-1.5 h-1.5 bg-[#E44849] rounded-full"></div>
-                        Productivité augmentée de 30%
+                        Productivité augmentée de {savings.productivityRate}%
                       </li>
                     </ul>
                   </div>
