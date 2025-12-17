@@ -160,8 +160,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/company/senyone/">
-                  <img src={linkedin} alt="" />
+                <a href="https://www.linkedin.com/company/senyone/" target="_blank" rel="noopener noreferrer">
+                  <img src={linkedin} alt="LinkedIn" className="w-6 h-6" />
                 </a>
               </li>
             </ul>
