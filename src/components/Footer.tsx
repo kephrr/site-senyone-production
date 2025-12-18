@@ -175,10 +175,10 @@ const Footer = () => {
               © 2025 SENYONE. Tous droits réservés.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-white hover:text-gray-300 transition-colors font-inter text-sm">
+              <a href="/Confidentialite" className="text-white hover:text-gray-300 transition-colors font-inter text-sm">
                 Politique de confidentialité
               </a>
-              <a href="#" className="text-white hover:text-gray-300 transition-colors font-inter text-sm">
+              <a href="/Mentions-legales" className="text-white hover:text-gray-300 transition-colors font-inter text-sm">
                 Mentions légales
               </a>
             </div>
