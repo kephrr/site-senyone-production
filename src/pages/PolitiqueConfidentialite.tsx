@@ -28,8 +28,12 @@ import {WhatsAppWidget} from "@/components/WhatsAppWidget";
  * 
  * N'ajoute pas de CSS
  * Ne crée pas de nouveau fichier
- * Ne travail sur aucun autre fichier que ceux-ci 
- * Ne crée pas de nouveau composant dans ceux-ci
+ * Ne travail sur aucun autre fichier que ceux-ci : MentionsLegales.tsx, PolitiqueConfidentialite.tsx
+ * Ne crée pas de nouveau composant
+ * Si tu en as besoin, utilise le composant "@/components/ui/accordion" pour faire les listes
+ * 
+ * Exemple : https://www.uipath.com/legal/trust-and-security/privacy-policy
+ * 
  * 
  */
 
