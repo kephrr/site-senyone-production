@@ -26,6 +26,7 @@ export const NotreEquipeSection = () => {
 
   return (
     <section
+    id='equipe'
       className="py-16 md:rounded-b-[50px] rounded-b-[25px] relative overflow-hidden"
       style={{
         backgroundImage: `url(${pattern})`,

@@ -56,26 +56,26 @@ const Footer = () => {
           {/* Qui sommes-nous ? */}
           <div className="lg:col-span-1">
             <h3 className="text-white font-semibold text-sm mb-6">
-              <a href="/Qui-sommes-Nous?">Qui sommes-nous ?</a>
+              <a href="/Qui-sommes-Nous">Qui sommes-nous ?</a>
             </h3>
             <ul className="space-y-3 text-xs">
               <li>
-                <a href="#mission" className="text-white hover:text-gray-300 transition-colors">
+                <a href="/Qui-sommes-Nous#mission" className="text-white hover:text-gray-300 transition-colors">
                   Notre mission
                 </a>
               </li>
               <li>
-                <a href="#valeurs" className="text-white hover:text-gray-300 transition-colors">
+                <a href="/Qui-sommes-Nous#valeurs" className="text-white hover:text-gray-300 transition-colors">
                   Nos valeurs
                 </a>
               </li>
               <li>
-                <a href="#equipe" className="text-white hover:text-gray-300 transition-colors">
+                <a href="/Qui-sommes-Nous#equipe" className="text-white hover:text-gray-300 transition-colors">
                   Notre équipe
                 </a>
               </li>
               <li>
-                <a href="#approche" className="text-white hover:text-gray-300 transition-colors">
+                <a href="/Qui-sommes-Nous#approche" className="text-white hover:text-gray-300 transition-colors">
                   Notre approche
                 </a>
               </li>
