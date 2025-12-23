@@ -18,6 +18,9 @@ export const formatNumber = (value: number, decimals: number = 0): string => {
  * @param decimals - Nombre de décimales à afficher (par défaut: 0)
  * @returns Le montant formaté avec le symbole FCFA
  */
-export const formatCurrency = (amount: number, decimals: number = 0): string => {
+export const formatCurrency = (amount: number, decimals: number = 0, number:boolean = false): string => {
+  if (number) {
+    return `${formatNumber(amount, decimals)}`;
+  }
   return `${formatNumber(amount, decimals)} FCFA`;
 };

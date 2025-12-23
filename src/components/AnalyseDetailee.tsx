@@ -91,7 +91,8 @@ export const DetailedAnalysis: React.FC<DetailedAnalysisProps> = ({
           pourcentageROI: formatNumber(savings.roi),
           periodeRetour: formatNumber(savings.paybackPeriod),
           productivityRate: formatNumber(savings.productivityRate),
-          automatableHoursPerWeek: formatNumber(automatableHoursPerWeek)
+          automatableHoursPerWeek: formatNumber(automatableHoursPerWeek),
+          implementationCost: formatNumber(savings.implementationCost)
         };
 
         console.log(templateParams)

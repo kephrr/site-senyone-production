@@ -59,9 +59,12 @@ export const EngagementRSE = () => {
         </div>
       </div>
       <div className="flex justify-center py-8 mt-20">
+        <a href="/contacts">
+
         <Button className="btn-teal flex items-center gap-3 min-w-[200px] rounded-full">
           Nous contacter
         </Button>
+        </a>
       </div>
     </section>
   );
