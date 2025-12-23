@@ -84,7 +84,7 @@ export const Carousel: React.FC<CarouselProps> = ({
       {showNavigation && (
         <div className="absolute top-0 left-0 right-0 z-20 bg-gradient-to-b from-black/60 to-transparent ">
           <div className="flex items-center justify-between gap-2 max-w-5xl mx-auto
-          sm:gap-6 md:gap-8 lg:gap-12 px-4 sm:px-6 md:px-10 lg:px-10 py-4 sm:py-6 
+           px-4 sm:px-6 md:px-10 lg:px-10 py-4 sm:py-6 
           overflow-x-auto scrollbar-hide ">
             {slides.map((slide, index) => (
               <button

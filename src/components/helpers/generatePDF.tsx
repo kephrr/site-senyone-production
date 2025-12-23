@@ -4,6 +4,8 @@ import { CompanyInfo } from '@/types/formTypes';
 import {calculateSavings as calculateSavingsUtil} from "@/components/helpers/QuestionHelp"
 import logoPng from "@/assets/images/logosenyone-copie.png"
 import { formatNumber } from '@/utils/formatters';
+import {NeuePlak} from '@/assets/fonts/NeuePlak-Regular-normal'
+import {NeueBold} from '@/assets/fonts/NeuePlak-Bold-bold'
 
 async function getImageDataUrl(url: string): Promise<string> {
   return await new Promise<string>((resolve, reject) => {
@@ -32,6 +34,13 @@ export const generatePDF = async (customAnswers: Record<string, any>, companyInf
       const savings = calculateSavingsUtil(customAnswers);
       const pdf = new jsPDF('p', 'mm', 'a4');
       
+
+      pdf.addFileToVFS('NeuePlak-Regular.ttf', NeuePlak);
+      pdf.addFont('NeuePlak-Regular.ttf', 'NeuePlak', 'normal');
+      
+      pdf.addFileToVFS('NeuePlak-Bold.ttf', NeueBold);
+      pdf.addFont('NeuePlak-Bold.ttf', 'NeuePlak', 'bold');
+
       // --- CONFIGURATION ET DIMENSIONS ---
       const pageWidth = pdf.internal.pageSize.getWidth();
       const pageHeight = pdf.internal.pageSize.getHeight();
@@ -66,18 +75,18 @@ export const generatePDF = async (customAnswers: Record<string, any>, companyInf
           pdf.addImage(logoDataUri, 'PNG', MARGIN, 15, 25, 0);
       } catch (e) {
           pdf.setFontSize(16);
-          pdf.setFont('helvetica', 'bold');
+          pdf.setFont('NeuePlak', 'bold');
           pdf.setTextColor(colors.primary);
           pdf.text('SENYONE', MARGIN, 22);
       }
 
       if (companyInfo) {
           pdf.setFontSize(9);
-          pdf.setFont('helvetica', 'bold');
+          pdf.setFont('NeuePlak', 'bold');
           pdf.setTextColor(colors.dark);
           pdf.text(companyInfo.companyName, pageWidth - MARGIN, 18, { align: 'right' });
           
-          pdf.setFont('helvetica', 'normal');
+          pdf.setFont('NeuePlak', 'normal');
           pdf.setFontSize(8);
           let infoY = 22;
           if (companyInfo.nomCompletPerson) {
@@ -90,13 +99,13 @@ export const generatePDF = async (customAnswers: Record<string, any>, companyInf
       // --- TITRE ---
       let yPos = 45;
       pdf.setFontSize(17);
-      pdf.setFont('helvetica', 'bold');
+      pdf.setFont('NeuePlak', 'bold');
       pdf.setTextColor(colors.dark);
       pdf.text('RAPPORT D\'ANALYSE D\'AUTOMATISATION', centerX, yPos, { align: 'center' });
       
       yPos += 7;
       pdf.setFontSize(12);
-      pdf.setFont('helvetica', 'normal');
+      pdf.setFont('NeuePlak', 'normal');
       pdf.text(`Préparé pour : ${companyInfo?.companyName || 'Votre entreprise'}`, centerX, yPos, { align: 'center' });
 
       yPos += 10;
@@ -112,7 +121,7 @@ export const generatePDF = async (customAnswers: Record<string, any>, companyInf
       // --- RÉSUMÉ EXÉCUTIF (CORRIGÉ) ---
       yPos += 15;
       pdf.setFontSize(11);
-      pdf.setFont('helvetica', 'normal');
+      pdf.setFont('NeuePlak', 'normal');
       pdf.setTextColor(colors.dark);
 
       const summaryText = `Cette analyse démontre que l'automatisation des processus répétitifs pourrait générer des économies annuelles de ${formatCurrency(savings.annualSavings)} pour ${companyInfo?.companyName || 'votre entreprise'}, avec un retour sur investissement de ${formatCurrency(savings.roi)} et un délai de rentabilité de ${savings.paybackPeriod} mois.`;
@@ -133,7 +142,7 @@ export const generatePDF = async (customAnswers: Record<string, any>, companyInf
       pdf.setFillColor(colors.primaryLight);
       pdf.roundedRect(MARGIN, yPos, contentWidth, 8, 1, 1, 'F');
       pdf.setFontSize(11);
-      pdf.setFont('helvetica', 'bold');
+      pdf.setFont('NeuePlak', 'bold');
       pdf.setTextColor(colors.primaryDark);
       pdf.text('1. DONNÉES D\'ENTRÉE', MARGIN + 5, yPos + 5.5);
       
@@ -182,7 +191,7 @@ export const generatePDF = async (customAnswers: Record<string, any>, companyInf
           pdf.roundedRect(x, y, cardW, cardH, 2, 2, 'FD');
           
           pdf.setFontSize(8);
-          pdf.setFont('helvetica', 'bold');
+          pdf.setFont('NeuePlak', 'bold');
           pdf.setTextColor(colors.gray);
           pdf.text(m.title, x + cardW / 2, y + 8, { align: 'center' });
 
@@ -199,7 +208,7 @@ export const generatePDF = async (customAnswers: Record<string, any>, companyInf
     pdf.roundedRect(20, yPos, 170, 8, 2, 2, 'F');
     
     pdf.setFontSize(12);
-    pdf.setFont('helvetica', 'bold');
+    pdf.setFont('NeuePlak', 'bold');
     pdf.setTextColor(parseInt(colors.dark.slice(1, 3), 16), 
                     parseInt(colors.dark.slice(3, 5), 16), 
                     parseInt(colors.dark.slice(5, 7), 16));
@@ -293,7 +302,7 @@ export const generatePDF = async (customAnswers: Record<string, any>, companyInf
     pdf.roundedRect(20, yPos, 170, 8, 2, 2, 'F');
     
     pdf.setFontSize(12);
-    pdf.setFont('helvetica', 'bold');
+    pdf.setFont('NeuePlak', 'bold');
     pdf.setTextColor(parseInt(colors.dark.slice(1, 3), 16), 
                     parseInt(colors.dark.slice(3, 5), 16), 
                     parseInt(colors.dark.slice(5, 7), 16));

@@ -43,8 +43,6 @@ export const DetailedAnalysis: React.FC<DetailedAnalysisProps> = ({
     setIsVisible(true);
   }, []);
 
-
-
   const savings = calculateSavings(answers);
   console.log(savings)
 
@@ -105,8 +103,10 @@ export const DetailedAnalysis: React.FC<DetailedAnalysisProps> = ({
         );
         // Télécharger le PDF après l'envoi de l'email
         setIsDownloading(true);
+        
         await onDownloadPDF(answers, info);
         setDownloadSuccess(true);
+        
         
         // Afficher un message de succès
         toast({
@@ -315,26 +315,26 @@ export const DetailedAnalysis: React.FC<DetailedAnalysisProps> = ({
                   </div>
                   
                   <div className="glass-border p-4 card-3d">
-                    <h4 className="text-xs font-bold gradient-text-secondary mb-3 flex items-center gap-1.5">
-                      <TrendingUp className="w-3.5 h-3.5 text-[#E44849]" />
+                    <h4 className="text-xs font-bold gradient-text mb-3 flex items-center gap-1.5">
+                      <TrendingUp className="w-3.5 h-3.5 text-[#00929E]" />
                       Gains potentiels
                     </h4>
                     <div className="space-y-2">
                       <div className="flex justify-between items-center p-2 glass-effect rounded">
                         <span className="text-xs text-gray-600">Économies hebdomadaires</span>
-                        <span className="text-xs font-bold gradient-text-secondary">{formatCurrency(savings.weeklySavings)}</span>
+                        <span className="text-xs font-bold gradient-text">{formatCurrency(savings.weeklySavings)}</span>
                       </div>
                       <div className="flex justify-between items-center p-2 glass-effect rounded">
                         <span className="text-xs text-gray-600">Économies mensuelles</span>
-                        <span className="text-xs font-bold gradient-text-secondary">{formatCurrency(savings.monthlySavings)}</span>
+                        <span className="text-xs font-bold gradient-text">{formatCurrency(savings.monthlySavings)}</span>
                       </div>
                     </div>
                   </div>
                 </div>
                 
                 <div className="glass-border p-4 card-3d">
-                  <h4 className="text-xs font-bold text-[#1E1E1E] mb-3 flex items-center gap-1.5">
-                    <Target className="w-3.5 h-3.5 text-[#1E1E1E]" />
+                  <h4 className="text-xs font-bold text-[#00929E] mb-3 flex items-center gap-1.5">
+                    <Target className="w-3.5 h-3.5 text-[#00929E]" />
                     Analyse du retour sur investissement
                   </h4>
                   <div className="space-y-3">

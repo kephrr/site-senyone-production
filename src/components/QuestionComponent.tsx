@@ -10,7 +10,7 @@ import { DetailedAnalysis } from './AnalyseDetailee';
 import { CompanyInfo, Question, QuestionProps, type QuestionAnswer } from '@/types/formTypes';
 import { formatNumber, formatCurrency } from '@/utils/formatters';
 import {calculateSavings as calculateSavingsUtil} from "@/components/helpers/QuestionHelp"
-import { generatePDF } from "./hooks/generatePDF";
+import { generatePDF } from "./helpers/generatePDF";
 
 declare module 'jspdf' {
   interface jsPDF {
