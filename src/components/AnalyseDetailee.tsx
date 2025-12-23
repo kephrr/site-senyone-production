@@ -4,6 +4,7 @@ import { CompanyInfo } from "@/types/formTypes";
 import {AlertDialog, CompanyInfoModal, calculateSavings} from "@/components/helpers/QuestionHelp"
 import { useToast } from '@/components/ui/use-toast';
 import emailjs from '@emailjs/browser';
+import { formatNumber } from "@/utils/formatters";
 
 export type QuestionAnswer = number | string | number[];
 
@@ -76,22 +77,21 @@ export const DetailedAnalysis: React.FC<DetailedAnalysisProps> = ({
           to_name: info.nomCompletPerson,
           company_name: info.companyName,
           phone: info.phone,
-          roi: savings.roi,
           message: `Nouvelle demande de rapport d'analyse d'automatisation de la part de ${info.nomCompletPerson} - ${info.companyName}`,
           from_name: "Senyone Automatisation",
           reply_to: info.email,
-          volume: savings.hoursPerWeek,
-          cout: savings.costPerHour,
-          taux: savings.automationRate,
+          volume: formatNumber(savings.hoursPerWeek),
+          cout: formatNumber(savings.costPerHour),
+          taux: formatNumber(savings.automationRate),
           date_simulation: dateAujourdhui,
-          economiesPotentielles: savings.annualSavings,
-          heuresAutomatisables: savings.automatableHours,
-          etpLibere: savings.etpLibere,
-          roiNet: savings.roiNet,
-          pourcentageROI: savings.roi,
-          periodeRetour: savings.paybackPeriod,
-          productivityRate: savings.productivityRate,
-          automatableHoursPerWeek: automatableHoursPerWeek
+          economiesPotentielles: formatNumber(savings.annualSavings),
+          heuresAutomatisables: formatNumber(savings.automatableHours),
+          etpLibere: formatNumber(savings.etpLibere),
+          roiNet: formatNumber(savings.roiNet),
+          pourcentageROI: formatNumber(savings.roi),
+          periodeRetour: formatNumber(savings.paybackPeriod),
+          productivityRate: formatNumber(savings.productivityRate),
+          automatableHoursPerWeek: formatNumber(automatableHoursPerWeek)
         };
 
         console.log(templateParams)
@@ -202,7 +202,7 @@ export const DetailedAnalysis: React.FC<DetailedAnalysisProps> = ({
                     </div>
                     <div className="flex items-baseline gap-1">
                       <span className="text-xl font-bold gradient-text">
-                        {savings.automatableHours}
+                        {formatNumber(savings.automatableHours)}
                       </span>
                       <span className="text-sm text-[#007a85]">heures</span>
                     </div>
@@ -367,9 +367,9 @@ export const DetailedAnalysis: React.FC<DetailedAnalysisProps> = ({
                   <div className="space-y-3">
                     {[
                       { 
-                        phase: 'Phase 1 - Audit', 
-                        duration: '2 semaines', 
-                        tasks: ['Analyse des processus', 'Identification des priorités'],
+                        phase: 'Phase 1 : Audit & Analyse', 
+                        duration: '2-3 semaines', 
+                        tasks: ['Analyse des processus', 'Identification des priorités', 'élaboration du plan d\'action'],
                         color: 'bg-[#00929E]/10',
                         border: 'border-[#00929E]/20',
                         text: 'text-[#00929E]',
@@ -379,8 +379,8 @@ export const DetailedAnalysis: React.FC<DetailedAnalysisProps> = ({
                       },
                       { 
                         phase: 'Phase 2 - Développement', 
-                        duration: '4 semaines', 
-                        tasks: ['Création des automatisations', 'Tests unitaires'],
+                        duration: '4-6 semaines', 
+                        tasks: ['Création des automatisations', 'Tests et validations', 'Formation des équipes'],
                         color: 'bg-[#E44849]/10',
                         border: 'border-[#E44849]/20',
                         text: 'text-[#E44849]',
@@ -390,8 +390,8 @@ export const DetailedAnalysis: React.FC<DetailedAnalysisProps> = ({
                       },
                       { 
                         phase: 'Phase 3 - Déploiement', 
-                        duration: '3 semaines', 
-                        tasks: ['Formation des équipes', 'Déploiement progressif'],
+                        duration: '2-3 semaines', 
+                        tasks: ['Déploiement progressif', 'Monitoring intitial', 'Ajustements optimaux'],
                         color: 'bg-[#1E1E1E]/10',
                         border: 'border-[#1E1E1E]/20',
                         text: 'text-[#1E1E1E]',
@@ -401,8 +401,8 @@ export const DetailedAnalysis: React.FC<DetailedAnalysisProps> = ({
                       },
                       { 
                         phase: 'Phase 4 - Optimisation', 
-                        duration: '3 semaines', 
-                        tasks: ['Surveillance des performances', 'Ajustements finaux'],
+                        duration: 'Continue', 
+                        tasks: ['Surveillance des performances', 'Amélioration continue', 'Scaling des solutions'],
                         color: 'bg-[#10B981]/10',
                         border: 'border-[#10B981]/20',
                         text: 'text-[#10B981]',

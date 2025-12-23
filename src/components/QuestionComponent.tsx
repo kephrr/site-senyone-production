@@ -11,6 +11,7 @@ import { CompanyInfo, Question, QuestionProps, type QuestionAnswer } from '@/typ
 import { formatNumber, formatCurrency } from '@/utils/formatters';
 import {calculateSavings as calculateSavingsUtil} from "@/components/helpers/QuestionHelp"
 import { generatePDF } from "./helpers/generatePDF";
+import { generateUniqueCode } from "./helpers/generateUniCode";
 
 declare module 'jspdf' {
   interface jsPDF {
@@ -979,7 +980,7 @@ const ThreeQuestionCalculator: React.FC = () => {
                     <div className="text-right">
                       <div className="text-xs text-white/80 mb-0.5">Simulation n°</div>
                       <div className="text-base font-bold glass-effect px-2 py-1 rounded">
-                        #{Date.now().toString().slice(-6)}
+                        #{generateUniqueCode()}
                       </div>
                     </div>
                   </div>
@@ -1022,7 +1023,7 @@ const ThreeQuestionCalculator: React.FC = () => {
                       </div>
                     </div>
                     <div className="text-center">
-                      <div className="text-xl font-bold gradient-text mb-0.5">{savings.automatableHours}</div>
+                      <div className="text-xl font-bold gradient-text mb-0.5">{formatNumber(savings.automatableHours)}</div>
                       <div className="text-gray-600 text-xs">Heures de travail par an</div>
                       <div className="text-xs gradient-text mt-0.5">
                         Temps gagné

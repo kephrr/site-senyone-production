@@ -8,7 +8,9 @@ export function MetricsSection() {
   const [section2Ref, section2Visible] = useScrollAnimation(0.1);
   
   return (
-    <div className={`w-full mx-auto bg-[#00929e] rounded-b-[50px] bg-[url(assets/images/pattern.png)] bg-repeat-x bg-cover`} style={{ backgroundImage: `url(${pattern})` }}>
+    <div className={`w-full mx-auto bg-[#00929e] 
+      rounded-b-[50px] bg-[url(assets/images/pattern.png)] bg-repeat-x bg-cover`} 
+    style={{ backgroundImage: `url(${pattern})` }}>
       <div className="bg-[#efefef] w-full rounded-b-[50px] h-20"></div>
       <div className="rounded-3xl md:p-12 p-4 text-white">
         {/* Version PC */}

@@ -8,7 +8,7 @@ export default function HomePage() {
   const [heroRef, heroVisible] = useScrollAnimation(0.1);
   
   return (
-    <div className="min-h-screen bg-[#efefef] md:py-16 py-12 md:px-4 px-8">
+    <div className="bg-[#efefef] md:py-16 py-12 md:px-4 px-8">
       <div ref={heroRef} className={`max-w-5xl mx-auto transition-all duration-1000 delay-200 ${
                         heroVisible ? 'translate-x-0 opacity-100' : 'translate-y-10 opacity-0'
                     }`}>
