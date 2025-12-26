@@ -14,16 +14,16 @@ export const EngagementRSE = () => {
     {
       title: "Développement Durable",
       points: [
-        "Professionnels formés aux technologies d'automatisation",
-        "Programme de stage pour étudiants en informatique",
-        "Partenariat avec universités locales",
+        "Réduction de 60% de la consommation papier chez nos clients",
+        "Solutions cloud optimisées pour réduire l'empreinte carbone",
+        "Télétravail et déplacements minimisés",
       ],
     },
   ];
 
   return (
     <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-6">
           <h2 className="text-xl md:text-3xl font-neue-plak font-bold text-gray-900 mb-2">
             Engagements RSE
@@ -37,7 +37,7 @@ export const EngagementRSE = () => {
               key={item.title}
               className="relative flex justify-center pb-10"
             >
-              <div className="absolute bottom-0 right-0 translate-x-6 translate-y-6 w-[260px] h-[160px] rounded-xl overflow-hidden z-0 pointer-events-none">
+              <div className="absolute bottom-0 right-0 translate-x-2 translate-y-1 md:translate-x-4 md:translate-y-2 w-[260px] h-[160px] rounded-xl overflow-hidden z-0 pointer-events-none">
                 <img
                   src={engagementImg}
                   alt="Engagement RSE"
@@ -58,10 +58,13 @@ export const EngagementRSE = () => {
           ))}
         </div>
       </div>
-      <div className="flex justify-center py-8">
+      <div className="flex justify-center py-8 mt-20">
+        <a href="/contacts">
+
         <Button className="btn-teal flex items-center gap-3 min-w-[200px] rounded-full">
           Nous contacter
         </Button>
+        </a>
       </div>
     </section>
   );

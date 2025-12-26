@@ -32,7 +32,7 @@ export const PourquoiNousChoisir = () => {
 
   return (
     <section
-      className="py-16 rounded-b-[50px] relative overflow-hidden"
+      className="py-16 md:rounded-b-[50px] rounded-b-[25px] relative overflow-hidden"
       style={{
         backgroundImage: `url(${pattern})`,
         backgroundRepeat: 'repeat',
@@ -54,11 +54,11 @@ export const PourquoiNousChoisir = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
           {values.map((value, index) => (
             <div 
-              className='relative overflow-hidden rounded-xl px-4 py-4 min-h-36 transition-all duration-300 hover:shadow-lg ${
+              className='relative overflow-hidden rounded-xl px-4 py-4 md:min-h-36 min-h-24 transition-all duration-300 hover:shadow-lg ${
                  bg-white text-[#383838] border-[#BDBDBD] border-[1px]'
             >
-              <div className="relative z-10 flex gap-4">
-                <div className="mb-6">
+              <div className="relative z-10 flex mb:gap-4 gap-2">
+                <div className="md:mb-6">
                   <div 
                     className="rounded-xl flex items-center justify-center bg--[#ED6E3D]"
                   >
@@ -66,12 +66,12 @@ export const PourquoiNousChoisir = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className={`text-xl font-bold mb-3 font-neue-plak ${
+                  <h3 className={`md:text-xl text-lg font-bold md:mb-3  font-neue-plak ${
                     'text-[#383838]'
                   }`}>
                     {value.title}
                   </h3>
-                  <p className="text-xl  leading-relaxed text-[#383838]">
+                  <p className="md:text-xl text-sm leading-relaxed text-[#383838]">
                     {value.description}
                   </p>
                 </div>

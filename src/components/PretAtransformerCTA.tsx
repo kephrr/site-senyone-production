@@ -39,7 +39,7 @@ export default function TransformationCTA() {
   ];
 
   return (
-    <section className="relative py-16 px-4 overflow-hidden rounded-t-[50px] font-neue-plak-normal">
+    <section className="relative md:py-16 py-12 px-8 md:px-4 overflow-hidden rounded-t-[50px] font-neue-plak-normal">
       {/* Image de fond */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
@@ -56,18 +56,18 @@ export default function TransformationCTA() {
       {/* Contenu */}
       <div className="relative z-20 max-w-5xl mx-auto text-start">
         {/* Titre principal */}
-        <h1 className="text-4xl md:text-2xl mb-6 text-white ont-neue-plak-normal">
+        <h1 className="text-xl md:text-2xl mb-2 md:mb-6 text-white ont-neue-plak-normal">
           Prêt à transformer ?
         </h1>
         
         {/* Sous-titre */}
-        <p className="text-xl md:text-5xl text-white font-neue-plak mb-6">
+        <p className="text-md md:text-5xl text-white md:font-neue-plak mb-2 md:mb-6">
           Votre transformation commence par une conversation stratégique.
         </p>
         
         {/* Description */}
         
-        <p className="text-lg md:text-lg text-blue-50 leading-relaxed mb-6">
+        <p className="hidden md:block text-sm md:text-lg text-blue-50 leading-relaxed mb-6">
             Optimisez votre conformité et boostez votre productivité grâce à nos solutions sur-mesure. 
             Quel que soit votre secteur, nous avons une offre dédiée pour évaluer vos besoins et lancer 
             votre mutation en toute sérénité.
@@ -75,20 +75,20 @@ export default function TransformationCTA() {
         
         
         {/* Offres par secteur */}
-        <ul className="flex flex-col mb-12">
+        <ul className="flex flex-col md:mb-12 mb-2">
           {offers.map((offer, index) => (
-            <li key={index} className="text-lg text-blue-50 leading-relaxed">
+            <li key={index} className="text-xs md:text-lg text-blue-50 leading-relaxed">
               - {offer.description}
             </li>
           ))}
         </ul>
         
         {/* Séparateur */}
-        <div className="border-t border-white/20 my-8"></div>
+        <div className="border-t border-white/20 md:my-8 my-2"></div>
         
         {/* Bouton d'action */}
         <a href="/contacts">
-          <button className="bg-white px-8 py-2 rounded-full font-semibold text-lg">
+          <button className="bg-white py-2 my-2 px-4 md:px-8 md:py-2 rounded-full font-semibold text-sm md:text-lg">
           Nous contacter
         </button>
         </a>

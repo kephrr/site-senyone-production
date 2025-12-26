@@ -1,7 +1,9 @@
+import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Calculator, Play, Settings } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import { useScrollAnimation } from "./hook/useScrollAnimation";
+import { useScrollAnimation } from "./hooks/useScrollAnimation";
+import { useVideoModal } from "@/contexts/VideoModalContext";
 
 interface HeroSectionProps {
   showButtons?: boolean;
@@ -22,10 +24,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   maxWidth = "max-w-5xl",
 }) => {
   const [heroRef, heroVisible] = useScrollAnimation(0.1);
+  const { openVideoModal } = useVideoModal();
 
   return (
     <section id="hero-section" className="relative flex items-center justify-center overflow-hidden z-0">
-      <div className="relative w-full overflow-hidden rounded-b-[50px]">
+      <div className="relative w-full overflow-hidden rounded-b-[25px] md:rounded-b-[50px]">
         {/* Background Image */}
         <div
           className="absolute inset-0 z-0"
@@ -60,21 +63,27 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Boutons d’action */}
           {showButtons && (
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
-              <Button className="btn-coral flex items-center gap-3 min-w-[200px] rounded-full">
+            <div className="z-20 flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+              <button 
+                className="z-50 cursor-pointer bg-[#e44849] rounded-full
+                text-white py-4 px-8 flex items-center flex gap-3 min-w-[200px]"
+                onClick={() => window.location.href = '/fast-diagnostic'}
+              >
                 <Calculator className="w-5 h-5" />
                 Calculer mon ROI
-              </Button>
-
-              <Button className="btn-teal flex items-center gap-3 min-w-[200px] rounded-full">
-                <Play className="w-5 h-5" />
-                Voir la démo
-              </Button>
-
+              </button>
+              <button className="z-50 cursor-pointer bg-[#00929E] text-white py-4 px-8
+              flex items-center flex gap-3 min-w-[200px] rounded-full" onClick={openVideoModal}>
+                  <Play className="w-5 h-5" />
+                  Voir la démo
+              </button>
+              
+              {/* 
               <Button className="btn-white flex items-center gap-3 min-w-[200px] rounded-full">
                 <Settings className="w-5 h-5" />
                 Diagnostic gratuit
               </Button>
+              */}
             </div>
           )}
         </div>

@@ -11,6 +11,7 @@ import { EngagementRSE } from "@/components/EngagementRSE";
 import { Button } from "@/components/ui/button";
 import { SecteurExpertiseSection } from "@/components/SecteurExpertiseSection";
 import { PourquoiNousChoisir } from "@/components/PourquoiNousChoisir";
+import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 
 const QuiSommesNous = () => {
   return (
@@ -33,6 +34,7 @@ const QuiSommesNous = () => {
       <EngagementRSE />
       <Banniere />
       <Footer />
+      <WhatsAppWidget />
     </div>
   );
 };

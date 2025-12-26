@@ -125,7 +125,7 @@ const ContactForm = () => {
             Numéro de téléphone
           </label>
           <input
-            type="tel"
+            type="number"
             id="telephone"
             name="telephone"
             placeholder="78-111-22-33"

@@ -27,8 +27,9 @@ export const NosResultatsChiffres = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat) => (
+            
             <div key={stat.value} className="flex items-start space-x-4">
-              <div className="w-2 h-16 bg-[#00929E]" />
+              <div className="w-2 h-16 bg-[#00929E] flex-shrink-0" style={{width: '0.25rem'}} />
               <div>
                 <div className="text-3xl md:text-4xl font-neue-plak font-bold text-[#383838] mb-2">
                   {stat.value}

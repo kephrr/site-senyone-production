@@ -91,8 +91,10 @@ const chunkArray = (arr: Item[], size: number): Item[][] => {
 };
 
 export default function ClientCarousel() {
-  const slides = chunkArray(items, 3); // chaque slide contient 3 items
+  const slides = chunkArray(items, 3); // chaque slide contient 3 items pour desktop
+  const mobileSlides = chunkArray(items, 1); // chaque slide contient 1 item pour mobile
   const [current, setCurrent] = useState(0);
+  const [mobileCurrent, setMobileCurrent] = useState(0);
 
   const prevSlide = () => {
     setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
@@ -102,18 +104,26 @@ export default function ClientCarousel() {
     setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
 
+  const prevMobileSlide = () => {
+    setMobileCurrent((prev) => (prev === 0 ? mobileSlides.length - 1 : prev - 1));
+  };
+
+  const nextMobileSlide = () => {
+    setMobileCurrent((prev) => (prev === mobileSlides.length - 1 ? 0 : prev + 1));
+  };
+
   return (
-    <div className=" py-12 px-4">
-      <div className="max-w-5xl mx-auto text-start">
-        <h2 className="text-3xl font-bold font-neue-plak">Nos réussites clients</h2>
+    <div className="md:py-12 py-8 md:px-4">
+      <div className="max-w-5xl mx-auto text-start px-4 md:px-0">
+        <h2 className="text-2xl font-bold font-neue-plak">Nos réussites clients</h2>
         <p className="text-gray-600 mt-2 font-neue-plak-normal">
-          De l’idée à l’impact. Des résultats concrets.
+          De l'idée à l'impact. Des résultats concrets.
         </p>
       </div>
 
-      {/* Carousel */}
-      <div className="relative mt-10 max-w-7xl mx-auto flex items-center font-neue-plak-normal">
-        {/* Bouton gauche */}
+      {/* Version Desktop - 3 cartes par slide */}
+      <div className="hidden md:relative md:mt-10 md:max-w-7xl md:mx-auto md:flex md:items-center font-neue-plak-normal">
+        {/* Bouton gauche Desktop */}
         <button
           onClick={prevSlide}
           className="absolute left-0 z-10 bg-gray-300 rounded-full p-2 hover:bg-gray-400"
@@ -121,7 +131,7 @@ export default function ClientCarousel() {
           <ChevronLeft className="w-6 h-6 text-white" />
         </button>
 
-        {/* Slides */}
+        {/* Slides Desktop */}
         <div className="w-full overflow-hidden">
           <div
             className="flex transition-transform duration-500"
@@ -130,12 +140,15 @@ export default function ClientCarousel() {
             {slides.map((group, slideIndex) => (
               <div
                 key={slideIndex}
-                className="w-full flex justify-center gap-6 flex-shrink-0 py-10"
+                className="md:w-full flex justify-center 
+                md:gap-6 flex-shrink-0 py-10"
               >
                 {group.map((item, index) => (
                   <div
                     key={index}
-                    className="relative bg-white rounded-2xl shadow p-6 w-80"
+                    className="relative bg-white
+                    rounded-2xl shadow md:p-6 p-4
+                    md:w-80 flex flex-col justify-between items-start"
                   >
                     {/* Image en arrière-plan */}
                     <div className="absolute inset-0 -z-10 -translate-x-[15px] -translate-y-[15px] rounded-2xl overflow-hidden">
@@ -158,14 +171,9 @@ export default function ClientCarousel() {
                       <span className="font-semibold">Impact :</span>{" "}
                       {item.impact}
                     </p>
-                    {/*  
-                    
-                    <button className="border border-gray-400 rounded-md px-4 py-2 text-sm hover:bg-gray-100">
+                    <button className="border p-2 border-black rounded-lg">
                       {item.buttonText}
                     </button>
-                    
-                    */}
-                    
                   </div>
                 ))}
               </div>
@@ -173,13 +181,96 @@ export default function ClientCarousel() {
           </div>
         </div>
 
-        {/* Bouton droite */}
+        {/* Bouton droite Desktop */}
         <button
           onClick={nextSlide}
           className="absolute right-0 z-10 bg-gray-300 rounded-full p-2 hover:bg-gray-400"
         >
           <ChevronRight className="w-6 h-6 text-white" />
         </button>
+      </div>
+
+      {/* Version Mobile - 1 carte par slide */}
+      <div className="md:hidden mt-8 px-4">
+        <div className="relative">
+          {/* Slides Mobile */}
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-500"
+              style={{ transform: `translateX(-${mobileCurrent * 100}%)` }}
+            >
+              {mobileSlides.map((group, slideIndex) => (
+                <div
+                  key={slideIndex}
+                  className="w-full flex-shrink-0 py-6"
+                >
+                  {group.map((item, index) => (
+                    <div
+                      key={index}
+                      className="relative bg-white
+                      rounded-2xl shadow p-6 mx-auto"
+                      style={{ maxWidth: '320px' }}
+                    >
+                      {/* Image en arrière-plan */}
+                      <div className="absolute inset-0 -z-10 -translate-x-[10px] -translate-y-[10px] rounded-2xl overflow-hidden">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-full object-cover opacity-80"
+                        />
+                      </div>
+
+                      <h3 className="text-lg font-bold mb-3 font-neue-plak">{item.title}</h3>
+                      <p className="text-gray-700 mb-2 text-sm">
+                        <span className="font-semibold">Défi :</span> {item.defi}
+                      </p>
+                      <p className="text-gray-700 mb-2 text-sm">
+                        <span className="font-semibold">Solution :</span>{" "}
+                        {item.solution}
+                      </p>
+                      <p className="text-gray-700 mb-4 text-sm">
+                        <span className="font-semibold">Impact :</span>{" "}
+                        {item.impact}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation Mobile */}
+          <div className="flex justify-center items-center gap-4 mt-6">
+            {/* Bouton gauche Mobile */}
+            <button
+              onClick={prevMobileSlide}
+              className="bg-gray-300 rounded-full p-2 hover:bg-gray-400"
+            >
+              <ChevronLeft className="w-5 h-5 text-white" />
+            </button>
+
+            {/* Indicateurs de slide */}
+            <div className="flex gap-2">
+              {mobileSlides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setMobileCurrent(index)}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    index === mobileCurrent ? "bg-[#00929E]" : "bg-gray-300"
+                  }`}
+                />
+              ))}
+            </div>
+
+            {/* Bouton droite Mobile */}
+            <button
+              onClick={nextMobileSlide}
+              className="bg-gray-300 rounded-full p-2 hover:bg-gray-400"
+            >
+              <ChevronRight className="w-5 h-5 text-white" />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

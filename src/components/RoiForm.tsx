@@ -17,7 +17,7 @@ export default function ROIForm() {
   }, [hoursPerWeek, hourlyRate, documentsPerMonth]);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 ">
+    <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
       {/* Gauche : formulaire */}
       <div className="flex flex-col gap-6">
         <h2 className="text-2xl font-neue-plak font-bold">Estimez votre ROI en un instant !</h2>
@@ -95,9 +95,13 @@ export default function ROIForm() {
           </div>
         </div>
 
+        
         <button className="mt-6 bg-red-500 text-white rounded-lg py-3 hover:bg-red-600 transition">
+          <a href="/fast-diagnostic">
           Obtenir un rapport détaillé
+          </a>
         </button>
+
       </div>
     </div>
   );

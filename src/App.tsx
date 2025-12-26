@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { VideoModalProvider } from "@/contexts/VideoModalContext";
 import Index from "./pages/Index";
 import QuiSommesNous from "./pages/QuiSommesNous";
 import QuiAidonsNous from "./pages/interface/QuiAidonsNous";
@@ -19,18 +20,22 @@ import QANRessourcesHumaines from "./pages/QANRessourcesHumaines";
 import QANOperationProduction from "./pages/QANOperationProduction";
 import QANMarketing from "./pages/QANMarketing";
 import QANFinanciere from "./pages/QANFinanciere";
+import RoiDiagPage from "./pages/RoiDiagPage";
+import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
+import MentionsLegales from "./pages/MentionsLegales";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
+    <VideoModalProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/Qui-sommes-Nous?" element={<QuiSommesNous />} />
+          <Route path="/qui-sommes-nous" element={<QuiSommesNous />} />
           <Route path="/juridique" element={<QANJuridique />} />
           <Route path="/informatique" element={<QANInformatique />} />
           <Route path="/ressources-humaines" element={<QANRessourcesHumaines />} />
@@ -39,21 +44,19 @@ const App = () => (
           <Route path="/financiere" element={<QANFinanciere />} />
           <Route path="/commerciale" element={<QANCommerciale />} />
           <Route path="/achats-logistique" element={<QANAchatsLogistique />} />
-          {
-            /*  
-            <Route path="/Nos-solutions" element={<NosSolutions />} />
-            <Route path="/Nos-ressources" element={<NosRessources />} />
-            <Route path="/Blog" element={<Blog />} />   
-            */
-          }
-          
-
+          <Route path="/Nos-ressources" element={<NosRessources />} />
+          <Route path="/Nos-solutions" element={<NosSolutions />} />
+          <Route path="/Blog" element={<Blog />} />
+          <Route path="/fast-diagnostic" element={<RoiDiagPage />} />
           <Route path="/Contacts" element={<Contact />} />
+          <Route path="/Confidentialite" element={<PolitiqueConfidentialite />} />
+          <Route path="/Mentions-legales" element={<MentionsLegales />} />
           
           <Route path="*" element={<Index />} />
         </Routes>
       </BrowserRouter>
-    </TooltipProvider>
+      </TooltipProvider>
+    </VideoModalProvider>
   </QueryClientProvider>
 );
 

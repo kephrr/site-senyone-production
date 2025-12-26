@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Quote } from "lucide-react";
-import { useScrollAnimation } from "./hook/useScrollAnimation";
+import { useScrollAnimation } from "./hooks/useScrollAnimation";
 
 export interface CasClient {
   title: string;
@@ -41,7 +41,7 @@ const CasClientSection = ({cases}: {cases: CasClient[]}) => {
       }`}
     >
       <div className="rounded-t-[40px] bg-gradient-to-b from-[#ED6E3D] via-[#E44849] to-[#E44849] text-white overflow-hidden px-8 md:px-12 py-10 md:py-14">
-        <div className="max-w-5xl px-8 mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
+        <div className="max-w-5xl md:px-8 mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
           {/* Texte */}
           <div className="flex-1">
             <Quote className="w-10 h-10 mb-6" />
@@ -55,7 +55,7 @@ const CasClientSection = ({cases}: {cases: CasClient[]}) => {
               <span className="font-neue-plak-thin">{current.author}</span>, {current.company}
             </p>
 
-            <div className="mt-8 flex gap-3">
+            {/*<div className="mt-8 flex gap-3">
               <button
                 type="button"
                 onClick={handlePrev}
@@ -70,11 +70,11 @@ const CasClientSection = ({cases}: {cases: CasClient[]}) => {
               >
                 Suivant
               </button>
-            </div>
+            </div>*/}
           </div>
 
           {/* Image circulaire, deux cercles empilés */}
-          <div className="ml-52 flex flex-1 justify-center">
+          <div className="hidden md:block ml-52 flex flex-1 justify-center">
             <div className="relative w-60 h-60">
               {/* Cercle arrière (blanc) */}
               <div

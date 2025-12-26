@@ -13,21 +13,21 @@ export interface EtapeProcessus {
 }
 
 const CarteEtape: React.FC<{ etape: EtapeProcessus; estDerniere: boolean; pos: boolean }> = ({ etape, estDerniere, pos }) => (
-  <div className="relative">
+  <div className="">
     <div className={
       pos?
-      "ml-80 bg-white rounded-l-[150px] rounded-r-[25px] py-4 px-6 border border-gray-300":
-      "mr-80 bg-white rounded-r-[150px] rounded-l-[25px] py-4 px-6 border border-gray-300"
+      "ml-2 md:ml-80 bg-white md:rounded-l-[150px] md:rounded-r-[25px] rounded-[25px] py-4 px-6 border border-gray-300":
+      "mr-2 md:mr-80 bg-white md:rounded-r-[150px] md:rounded-l-[25px] rounded-[25px] py-4 px-6 border border-gray-300"
       }>
-      <div className="flex items-start justify-center gap-6">
+      <div className="flex flex-col md:flex-row items-start justify-center gap-6 max-w-5xl">
         {pos?
-          <div className="flex-shrink-0 h-full">
-            <div className="h-full rounded-full bg-teal-50 flex items-center justify-center">
+          <div className="md:flex-shrink-0 md:h-full">
+            <div className="md:h-full rounded-full bg-teal-50 flex items-center justify-center">
               {etape.icone}
             </div>
           </div>
           :null}
-        <div className='max-w-[450px]'>
+        <div className='md:max-w-[450px]'>
           <h3 className="text-xl text-gray-900 font-neue-plak">{etape.titre}</h3>
           <p className="text-gray-600 leading-relaxed font-neue-plak-thin text-xs">{etape.description}</p>
         </div>
@@ -41,7 +41,7 @@ const CarteEtape: React.FC<{ etape: EtapeProcessus; estDerniere: boolean; pos: b
     </div>
     
     {!estDerniere && (
-      <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2">
+      <div className="flex items-center justify-center">
         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gray-500">
           <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
@@ -98,8 +98,8 @@ export const ProcessusSection = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-5xl mx-auto space-y-12">
+    <div className="container mx-auto px-4">
+      <div className="max-w-5xl mx-auto space-y-2">
         {etapesProcessus.map((etape, index) => (
           <CarteEtape 
             key={etape.id} 

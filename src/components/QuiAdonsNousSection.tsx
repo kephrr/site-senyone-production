@@ -12,6 +12,7 @@ const slides: Slide[] = [
     image: marketing,
     buttonText: "En savoir plus",
     buttonLink: "/financiere",
+    badge: "Direction Financière"
   },
   {
     id:2,
@@ -21,6 +22,7 @@ const slides: Slide[] = [
     image: ventes,
     buttonText: "Découvrir",
     buttonLink: "/achats-logistique",
+    badge: "Achats/Logistique"
   },
   {
     id:3,
@@ -30,6 +32,7 @@ const slides: Slide[] = [
     image: ventes,
     buttonText: "Découvrir",
     buttonLink: "/ressources-humaines",
+    badge: "RH"
   },
   {
     id:4,
@@ -39,6 +42,7 @@ const slides: Slide[] = [
     image: ventes,
     buttonText: "En savoir plus",
     buttonLink: "/informatique",
+    badge: "DSI & Innovations"
   },
   {
     id:5,
@@ -48,6 +52,7 @@ const slides: Slide[] = [
     image: ventes,
     buttonText: "Découvrir",
     buttonLink: "/commerciale",
+    badge: "Direction Commerciale"
   },
   {
     id:6,
@@ -57,21 +62,22 @@ const slides: Slide[] = [
     image: ventes,
     buttonText: "En savoir plus",
     buttonLink: "/operations-production",
+    badge: "Opérations/Production"
   },
 ];
 
 export default function QuiAdonsNousSection() {
   return (
-    <section className="py-16">
-        <div className="text-start mb-10 flex flex-col mx-28">
-          <h1 className="md:min-w-5xl text-4xl md:text-2xl font-bold text-[#000000] mb-2 font-neue-plak">
+    <section className="py-16 ">
+        <div className="text-start mb-10 flex flex-col md:mx-auto max-w-5xl mx-4">
+          <h1 className="text-2xl md:text-2xl font-bold text-[#000000] mb-2 font-neue-plak">
             Qui aidons-nous ?
           </h1>
-          <p className="text-lg text-[#383838] max-w-2xl text-start font-neue-plak-normal">
+          <p className="md:text-lg text-[#383838] max-w-2xl text-start font-neue-plak-normal">
             Chaque direction a ses défis. Nous avons vos solutions
           </p>
         </div>
-      <Carousel slides={slides} height="h-[600px]" />
+      <Carousel slides={slides} height="md:h-[600px] h-[400px]" autoPlay={true} />
     </section>
   );
 }
